@@ -12,8 +12,12 @@
  *= require_tree .
  */
 
-html {
-  background: ;
+html { height: 100% }
+
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
 }
 
 .brand{
@@ -24,6 +28,6 @@ html {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
 }
 
-/*.ui.input{
-  width: 75% !important;
-}*/
+#map_canvas {
+  height: 100%;
+}
