@@ -20,6 +20,11 @@ body {
   padding: 0px
 }
 
+.sidebar{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
 .brand{
   font-family: 'Swanky and Moo Moo', cursive;
 }
