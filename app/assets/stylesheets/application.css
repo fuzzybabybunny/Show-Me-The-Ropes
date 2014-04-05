@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+
+html {
+  background: ;
+}
+
+.brand{
+  font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.button{
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+}
+
+/*.ui.input{
+  width: 75% !important;
+}*/
