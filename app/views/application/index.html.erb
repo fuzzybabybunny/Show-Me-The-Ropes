@@ -24,8 +24,8 @@
       var map_options = {
         center: new google.maps.LatLng(22.25, 114.1667),
         zoom: 12,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      var styles = [
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: [
             {
               stylers: [
                 { hue: "#00ffe6" },
@@ -45,9 +45,9 @@
                 { visibility: "off" }
               ]
             }
-          ];
-      }
-      map.setOptions({styles: styles});
+          ]
+
+       }
       var map = new google.maps.Map(map_canvas, map_options)
     }
 
