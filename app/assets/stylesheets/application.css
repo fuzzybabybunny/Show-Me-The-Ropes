@@ -11,3 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+html { height: 100% }
+
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+.sidebar{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.brand{
+  font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.button{
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+}
+
+#map_canvas {
+  height: 100%;
+}
