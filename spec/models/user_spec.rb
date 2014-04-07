@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
 
   before :each do
-    User.create(email: 'harry@ga.co', password: '1234', password_confirmation: '1234')
+    User.create(email: 'harry@ga.co', password: '1234', password_confirmation: '1234', first_name: 'harry', last_name: 'ng')
   end
 
   it "is valid with an email" do
