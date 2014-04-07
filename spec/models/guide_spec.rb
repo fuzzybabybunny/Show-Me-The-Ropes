@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe guide do
+describe Guide do
 
   before :each do
     User.create(email: 'harry@ga.co', password: '1234', password_confirmation: '1234', first_name: 'Harry', last_name: 'Ng')

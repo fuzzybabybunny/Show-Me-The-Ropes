@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   before_save :set_random_password, :encrypt_password
   validates :email, presence: true, uniqueness: {case_sensitive: false}
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
   validates :password, confirmation: true
 
   def self.authenticate(email, password)
