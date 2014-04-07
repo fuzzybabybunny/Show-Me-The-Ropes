@@ -45,24 +45,26 @@
       </div>
     </div>
 
-    <div class="right menu">
-      <div class="item">
-        <div class="ui input">
-          <input type="text" placeholder="Email">
+    <%= form_for :user, url: login_url, html: { id: "loginform" } do |f| %>
+        <div class="right menu">
+          <div class="item">
+            <div class="ui input">
+              <%= f.text_field :email, placeholder: "Email" %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui input">
+              <%= f.text_field :password, placeholder: "Password" %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui button">Log-in</div>
+          </div>
+          <div class="item">
+            <div class="ui teal button">Sign up</div>
+          </div>
         </div>
-      </div>
-      <div class="item">
-        <div class="ui input">
-          <input type="password" placeholder="Password">
-        </div>
-      </div>
-      <div class="item">
-        <div class="ui button">Log-in</div>
-      </div>
-      <div class="item">
-        <div class="ui teal button">Sign up</div>
-      </div>
-    </div>
+    <% end %>
   </div>
   <div class="ui left top sidebar">
     <a class="active item">
