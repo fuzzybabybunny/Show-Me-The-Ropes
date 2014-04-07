@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407033735) do
+ActiveRecord::Schema.define(version: 20140407094100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "guides", force: true do |t|
+    t.string   "guide_id"
+    t.string   "experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.string   "review_ID"
+    t.string   "reviewer"
+    t.string   "reviewee"
+    t.string   "review"
+    t.string   "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rookies", force: true do |t|
+    t.string   "rookie_id"
+    t.string   "experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -23,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140407033735) do
     t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "expires_at"
   end
 
 end
