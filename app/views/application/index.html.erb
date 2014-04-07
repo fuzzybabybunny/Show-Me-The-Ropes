@@ -19,17 +19,17 @@
   <%= javascript_include_tag "homepage" %>
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
   <script>
-      function initialize() {
-        var map_canvas = document.getElementById('map_canvas');
-        var map_options = {
-          center: new google.maps.LatLng(22.25, 114.1667),
-          zoom: 12,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(map_canvas, map_options)
+    function initialize() {
+      var map_canvas = document.getElementById('map_canvas');
+      var map_options = {
+        center: new google.maps.LatLng(22.25, 114.1667),
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+      var map = new google.maps.Map(map_canvas, map_options)
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 
 </head>
 
