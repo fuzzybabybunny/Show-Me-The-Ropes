@@ -1,0 +1,85 @@
+{
+  "links": {
+    "posts.author": {
+      "href": "http://example.com/people/{posts.author}",
+      "type": "people"
+    },
+    "posts.comments": {
+      "href": "http://example.com/comments/{posts.comments}",
+      "type": "comments"
+    }
+  },
+
+
+  "pins.location": {
+    "href": "http://show_me_the_ropes.com/pin/{pin.location}/pin_id",
+
+  }
+__________________________________________________________________________
+
+1. API for all Guides:
+{
+  [
+    {
+      "id": "1",
+      "first_name": "Harry",
+      "last_name": "Ng",
+      "photo": "http://...",
+      "rating", 5,
+      "href": "http://example.com/api/guides/{guide_id}",
+      "pins": "http://example.com/api/pins/{guide.pins}"
+
+    },
+    {
+      "id": "2",
+      "experience": "blah, Soccer",
+      "first_name": "Anil",
+      "last_name": "Bridgpal",
+      "photo": "http://...",
+      "href": "http://example.com/api/guides/{guide_id}",
+      "rating": "3",
+      "href": "http://example.com/api/guides/{guide_id}",
+      "pins": "http://example.com/api/pins/{guide.pins}"
+    }
+  ]
+}
+
+________________________________________________________________________________
+
+2. API for one particular Guide (Detail):
+{
+  guide: {
+      "id": "1",
+      "first_name": "Harry",
+      "last_name": "Ng",
+      "photo": "http://...",
+      "rating", 5,
+      "experience": "blah blah blah",
+      "href": "http://example.com/api/guides/{guide_id}",
+      "pins": "http://example.com/api/pins/{guide.pins}"
+  }
+}
+
+____________________________________________________________________________________
+
+
+3. API for all Pins:
+{
+  [
+    {
+      "pin_id": "1",
+      "lat": "22.3",
+      "long": "114",
+      "first_name": "Harry",
+      "last_name": "Ng",
+      "photo": "http://...",
+      "rating": 5,
+      "activity": "hiking",
+      "description": "blah blah",
+
+      "href": "http://example.com/api/guides/{guide_id}",
+    }
+  ]
+
+
+}
