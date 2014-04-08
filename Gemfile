@@ -44,6 +44,9 @@ gem 'autoprefixer-rails'
 
 gem 'therubyracer', platforms: :ruby # or any other runtime
 
+gem 'rabl'
+
+gem 'oj'
 
 
 group :development, :test do
