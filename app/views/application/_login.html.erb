@@ -1,0 +1,22 @@
+    <%= form_for :user, url: login_url, html: { id: "loginform" } do |f| %>
+        <div class="right menu">
+          <div class="item">
+            <div class="ui input">
+              <%= f.text_field :email, placeholder: "Email" %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui input">
+              <%= f.text_field :password, placeholder: "Password" %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui button">
+              <%= show_login_or_logout %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui teal button">Sign up</div>
+          </div>
+        </div>
+    <% end %>
