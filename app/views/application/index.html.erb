@@ -18,41 +18,7 @@
   <%= javascript_include_tag "semantic-ui" %>
   <%= javascript_include_tag "homepage" %>
   <script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyA5wHc9c4B8RD4lPT_Sbr0ZybZI3kwY0sM&sensor=false"></script>
-  <script>
-    function initialize() {
-      var map_canvas = document.getElementById('map_canvas');
-      var map_options = {
-        center: new google.maps.LatLng(22.25, 114.1667),
-        zoom: 12,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        styles: [
-            {
-              stylers: [
-                { hue: "#00ffe6" },
-                { saturation: -20 }
-              ]
-            },{
-              featureType: "road",
-              elementType: "geometry",
-              stylers: [
-                { lightness: 100 },
-                { visibility: "simplified" }
-              ]
-            },{
-              featureType: "road",
-              elementType: "labels",
-              stylers: [
-                { visibility: "off" }
-              ]
-            }
-          ]
-
-       }
-      var map = new google.maps.Map(map_canvas, map_options)
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
+  <%= javascript_include_tag "maps" %>
 
 </head>
 
