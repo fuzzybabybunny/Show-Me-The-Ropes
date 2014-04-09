@@ -3,6 +3,8 @@ require 'bcrypt'
 PASSWORD_RESET_EXPIRES = 4
 class User < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
+  has_one :guide
+  has_one :rookie
 
 
   before_save :set_random_password, :encrypt_password
