@@ -1,2 +1,4 @@
-class Guide < ActiveRecord::Base
+class Guide < User
+
+
 end

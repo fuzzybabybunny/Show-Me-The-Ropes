@@ -1,2 +1,3 @@
-class Rookie < ActiveRecord::Base
+class Rookie < User
+
 end

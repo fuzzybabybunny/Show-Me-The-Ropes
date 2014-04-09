@@ -5,5 +5,6 @@ node :linked do
     reviews: reviews_url,
     rookies: rookies_url,
     pins: pins_url
+
   }
 end

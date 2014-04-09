@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407103930) do
+ActiveRecord::Schema.define(version: 20140409033515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20140407103930) do
   create_table "guides", force: true do |t|
     t.string   "guide_id"
     t.string   "experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pins", force: true do |t|
+    t.string   "guide_id"
+    t.string   "location"
+    t.string   "activity"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
