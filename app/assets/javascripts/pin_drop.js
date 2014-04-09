@@ -5,7 +5,6 @@ $( "#addpin" ).on( "click", function() {
       position: location,
       map: window.map
   });
-
   map.setCenter(location);
   console.log(location);
   }
