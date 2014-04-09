@@ -1,7 +1,7 @@
 collection @rookies, root: :rookies
 
-attributes :id, :rookie_id
-attributes :id, :experience
+attributes :id, :person_id
+attributes :id, :rookie_experience
 
 node :href do |rookie|
   rookie_url(rookie)

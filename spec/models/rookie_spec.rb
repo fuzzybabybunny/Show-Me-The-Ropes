@@ -6,9 +6,9 @@ describe Rookie do
     User.create(email: 'harry@ga.co', password: '1234', password_confirmation: '1234', first_name: 'Harry', last_name: 'Ng')
   end
 
-  context "the system should auto-generate a rookieID when the user chooses to become a rookie" do
-    it "is invalid without a rookieID"
-    it "is valid with a rookieID"
+  context "the system should auto-generate a rookie_id when the user chooses to become a rookie" do
+    it "is invalid without a rookie_id"
+    it "is valid with a rookie_id"
   end
 
   describe "rookie experience is provided" do

@@ -1,8 +1,8 @@
 class CreateGuideMessages < ActiveRecord::Migration
   def change
     create_table :guide_messages do |t|
-      t.string :rookieID
-      t.string :guideID
+      t.integer :rookie_id
+      t.integer :guide_id
       t.string :message
 
       t.timestamps

@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :pin do
     lat "MyString"
     long "MyString"
-    guideID "MyString"
+    guide_id "MyString"
     activity "MyString"
     description "MyString"
   end

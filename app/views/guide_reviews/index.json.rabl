@@ -1,7 +1,7 @@
 collection @guide_reviews, root: :guide_reviews
 
-attributes :id, :rookieID
-attributes :id, :guideID
+attributes :id, :rookie_id
+attributes :id, :guide_id
 attributes :id, :textReview
 attributes :id, :rating
 

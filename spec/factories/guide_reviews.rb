@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :guide_review do
-    rookieID "MyString"
-    guideID "MyString"
+    rookie_id "MyString"
+    guide_id "MyString"
     textReview "MyString"
     rating "MyString"
   end

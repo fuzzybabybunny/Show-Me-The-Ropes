@@ -1,6 +1,6 @@
 object @guide_review
 
-attributes :rookieID
-attributes :guideID
+attributes :rookie_id
+attributes :guide_id
 attributes :textReview
 attributes :rating

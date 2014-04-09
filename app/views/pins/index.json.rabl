@@ -2,7 +2,7 @@ collection @pins, root: :pins
 
 attributes :id, :long
 attributes :id, :lat
-attributes :id, :guideID
+attributes :id, :guide_id
 attributes :id, :activity
 attributes :id, :description
 

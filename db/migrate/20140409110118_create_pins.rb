@@ -1,9 +1,9 @@
 class CreatePins < ActiveRecord::Migration
   def change
     create_table :pins do |t|
-      t.string :lat
-      t.string :long
-      t.string :guideID
+      t.float :lat
+      t.float :long
+      t.integer :guide_id
       t.string :activity
       t.string :description
 

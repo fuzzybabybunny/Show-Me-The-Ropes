@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :guide_message do
-    rookieID "MyString"
-    guideID "MyString"
+    rookie_id "MyString"
+    guide_id "MyString"
     message "MyString"
   end
 end

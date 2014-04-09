@@ -6,9 +6,9 @@ describe Guide do
     User.create(email: 'harry@ga.co', password: '1234', password_confirmation: '1234', first_name: 'Harry', last_name: 'Ng')
   end
 
-  context "the system should auto-generate a guideID when the user chooses to become a guide" do
-    it "is invalid without a guideID"
-    it "is valid with a guideID"
+  context "the system should auto-generate a guide_id when the user chooses to become a guide" do
+    it "is invalid without a guide_id"
+    it "is valid with a guide_id"
   end
 
   describe "guide experience is provided" do

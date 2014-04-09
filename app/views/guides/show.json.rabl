@@ -1,4 +1,4 @@
 object @guide
 
-attributes :userID
-attributes :guideExperience
+attributes :person_id
+attributes :guide_experience
