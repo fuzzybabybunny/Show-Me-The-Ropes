@@ -1,16 +1,16 @@
 $( "#addpin" ).on( "click", function() {
-  console.log("yoyo");
-  // function placeMarker(location) {
-  // var marker = new google.maps.Marker({
-  //     position: location,
-  //     map: map
-  // });
+  console.log("pindrop on");
+  function placeMarker(location) {
+  var marker = new google.maps.Marker({
+      position: location,
+      map: window.map
+  });
 
-  // map.setCenter(location);
-  // console.log(location);
-  // }
+  map.setCenter(location);
+  console.log(location);
+  }
 
-  // google.maps.event.addListener(map, 'click', function(event) {
-  //   placeMarker(event.latLng);
-  // });
+  google.maps.event.addListener(map, 'click', function(event) {
+    placeMarker(event.latLng);
+  });
   });

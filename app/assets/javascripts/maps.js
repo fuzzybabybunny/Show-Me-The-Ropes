@@ -29,8 +29,8 @@ function initialize() {
         // }
       ]
    }
-  var map = new google.maps.Map(map_canvas, map_options)
-
+  var map = new google.maps.Map(map_canvas, map_options);
+  window.map = map;
 
 // PRE-SET MARKERS
   var marker = new google.maps.Marker({
