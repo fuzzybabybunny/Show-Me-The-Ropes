@@ -14,17 +14,31 @@ ShowMeTheRopes::Application.routes.draw do
       get ':id' => "guides#show", on: :collection
     end
 
+    resources :rookies, defaults: {format: :json} do
+      get ':id' => "rookies#show", on: :collection
+    end
+
+    resources :guide_reviews, defaults: {format: :json} do
+      get ':id' => "guide_reviews#show", on: :collection
+    end
+
+    resources :rookie_reviews, defaults: {format: :json} do
+      get ':id' => "rookie_reviews#show", on: :collection
+    end
+
     resources :pins, defaults: {format: :json} do
       get ':id' => "pins#show", on: :collection
     end
 
-    resources :reviews, defaults: {format: :json} do
-      get ':id' => "reviews#show", on: :collection
+    resources :rookie_messages, defaults: {format: :json} do
+      get ':id' => "rookie_messages#show", on: :collection
     end
 
-    resources :rookies, defaults: {format: :json} do
-      get ':id' => "rookies#show", on: :collection
+    resources :guide_messages, defaults: {format: :json} do
+      get ':id' => "guide_messages#show", on: :collection
     end
+
+
 
   end
 

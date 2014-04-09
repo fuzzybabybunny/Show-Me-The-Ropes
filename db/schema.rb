@@ -11,14 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407103930) do
+ActiveRecord::Schema.define(version: 20140409062823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "guide_messages", force: true do |t|
+    t.string   "rookieID"
+    t.string   "guideID"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "guide_reviews", force: true do |t|
+    t.string   "rookieID"
+    t.string   "guideID"
+    t.string   "textReview"
+    t.string   "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "guides", force: true do |t|
     t.string   "guide_id"
     t.string   "experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pins", force: true do |t|
+    t.string   "lat"
+    t.string   "long"
+    t.string   "guideID"
+    t.string   "activity"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +55,23 @@ ActiveRecord::Schema.define(version: 20140407103930) do
     t.string   "reviewer"
     t.string   "reviewee"
     t.string   "review"
+    t.string   "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rookie_messages", force: true do |t|
+    t.string   "rookieID"
+    t.string   "guideID"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rookie_reviews", force: true do |t|
+    t.string   "rookieID"
+    t.string   "guideID"
+    t.string   "textReview"
     t.string   "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
