@@ -1,5 +1,7 @@
 class Rookie < ActiveRecord::Base
   belongs_to :user
-  attr_accessor :person_id, :rookie_experience
+  has_many :rookie_messages
+  has_many :guide_reviews
+  has_many :rookie_reviews
 
 end

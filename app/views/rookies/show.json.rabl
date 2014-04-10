@@ -1,4 +1,4 @@
 object @rookie
 
-attributes :person_id
+attributes :user_id
 attributes :rookie_experience

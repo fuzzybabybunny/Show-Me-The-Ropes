@@ -16,15 +16,15 @@ u3 = User.create({ email: "charlie@gmail.com", password: temp_password, password
 
 Guide.destroy_all
 
-g1 = Guide.create({ person_id: u1.id, guide_experience: "Skiing, Scuba" })
-g2 = Guide.create({ person_id: u2.id, guide_experience: "Hiking" })
-g3 = Guide.create({ person_id: u3.id, guide_experience: "Skiing" })
+g1 = Guide.create({ user_id: u1.id, guide_experience: "Skiing, Scuba" })
+g2 = Guide.create({ user_id: u2.id, guide_experience: "Hiking" })
+g3 = Guide.create({ user_id: u3.id, guide_experience: "Skiing" })
 
 Rookie.destroy_all
 
-r1 = Rookie.create({ person_id: u1.id, rookie_experience: "Skiing, Hiking" })
-r2 = Rookie.create({ person_id: u2.id, rookie_experience: "Hiking, Scuba" })
-r3 = Rookie.create({ person_id: u3.id, rookie_experience: "Skiing, Hiking" })
+r1 = Rookie.create({ user_id: u1.id, rookie_experience: "Skiing, Hiking" })
+r2 = Rookie.create({ user_id: u2.id, rookie_experience: "Hiking, Scuba" })
+r3 = Rookie.create({ user_id: u3.id, rookie_experience: "Skiing, Hiking" })
 
 GuideReview.destroy_all
 

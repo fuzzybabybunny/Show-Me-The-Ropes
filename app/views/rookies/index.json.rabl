@@ -1,6 +1,6 @@
 collection @rookies, root: :rookies
 
-attributes :id, :person_id
+attributes :id, :user_id
 attributes :id, :rookie_experience
 
 node :href do |rookie|

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140409110118) do
   end
 
   create_table "guides", force: true do |t|
-    t.integer  "person_id"
+    t.integer  "user_id"
     t.string   "guide_experience"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20140409110118) do
   end
 
   create_table "rookies", force: true do |t|
-    t.integer  "person_id"
+    t.integer  "user_id"
     t.string   "rookie_experience"
     t.datetime "created_at"
     t.datetime "updated_at"
