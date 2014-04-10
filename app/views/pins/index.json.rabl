@@ -1,5 +1,6 @@
 collection @pins, root: :pins
 
+attributes :id, :title
 attributes :id, :long
 attributes :id, :lat
 attributes :id, :guide_id
