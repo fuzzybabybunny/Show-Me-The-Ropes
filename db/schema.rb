@@ -50,15 +50,6 @@ ActiveRecord::Schema.define(version: 20140409110118) do
     t.datetime "updated_at"
   end
 
-  create_table "pins", force: true do |t|
-    t.string   "guide_id"
-    t.string   "location"
-    t.string   "activity"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "reviews", force: true do |t|
     t.integer  "review_ID"
     t.string   "reviewer"
