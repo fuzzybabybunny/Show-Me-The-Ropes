@@ -11,14 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409033515) do
+ActiveRecord::Schema.define(version: 20140409110118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "guide_messages", force: true do |t|
+    t.integer  "rookie_id"
+    t.integer  "guide_id"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "guide_reviews", force: true do |t|
+    t.integer  "rookie_id"
+    t.integer  "guide_id"
+    t.string   "textReview"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "guides", force: true do |t|
-    t.string   "guide_id"
-    t.string   "experience"
+    t.integer  "user_id"
+    t.string   "guide_experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pins", force: true do |t|
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "guide_id"
+    t.string   "activity"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,18 +60,35 @@ ActiveRecord::Schema.define(version: 20140409033515) do
   end
 
   create_table "reviews", force: true do |t|
-    t.string   "review_ID"
+    t.integer  "review_ID"
     t.string   "reviewer"
     t.string   "reviewee"
     t.string   "review"
-    t.string   "rating"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rookie_messages", force: true do |t|
+    t.integer  "rookie_id"
+    t.integer  "guide_id"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rookie_reviews", force: true do |t|
+    t.integer  "rookie_id"
+    t.integer  "guide_id"
+    t.string   "textReview"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rookies", force: true do |t|
-    t.string   "rookie_id"
-    t.string   "experience"
+    t.integer  "user_id"
+    t.string   "rookie_experience"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

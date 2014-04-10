@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :pin do
+    lat "MyString"
+    long "MyString"
     guide_id "MyString"
     location "MyString"
     activity "MyString"

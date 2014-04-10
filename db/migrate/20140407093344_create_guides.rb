@@ -1,8 +1,8 @@
 class CreateGuides < ActiveRecord::Migration
   def change
     create_table :guides do |t|
-      t.string :guide_id
-      t.string :experience
+      t.integer :user_id
+      t.string :guide_experience
 
       t.timestamps
     end

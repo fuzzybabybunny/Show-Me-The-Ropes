@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
 
-   belongs_to :guide
+  belongs_to :guide
 
 end
