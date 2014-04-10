@@ -8,5 +8,6 @@ node :linked do
     pins: pins_url,
     rookie_messages: rookie_messages_url,
     guide_messages: guide_messages_url
+
   }
 end
