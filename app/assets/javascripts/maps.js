@@ -1,4 +1,14 @@
 // INITIALIZE THE MAP
+function getMapData(id, template) {
+  $.ajax({
+    url: "/api/users/"+id,
+    type: "GET",
+    data: "JSON"
+  }).done(function(data){
+    alert(data["user"]["email"]);
+  })
+}
+
 function initialize() {
   var map_canvas = document.getElementById('map_canvas');
   var myLatlng = new google.maps.LatLng(22.25, 114.1667);
@@ -36,7 +46,8 @@ function initialize() {
   var marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
-    title:"This is marker 1!"
+    title:"This is marker 1!",
+    id: 2
   });
   var marker2 = new google.maps.Marker({
     position: myLatlng2,
@@ -67,6 +78,10 @@ function initialize() {
 // LISTENING FOR ICON CLICKS
   google.maps.event.addListener(marker, 'click', function() {
     console.log(marker.position);
+    console.log(marker.id);
+    getMapData(marker.id);
+    //ajax call using marker.id
+    //console.log HandlebarsTemplate["something"]
   });
 
 }
