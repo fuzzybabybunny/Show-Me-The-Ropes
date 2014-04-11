@@ -3,6 +3,8 @@ ShowMeTheRopes::Application.routes.draw do
   root 'application#index'
   #test
 
+  resources :users
+
   scope :api do
     get '' => "api#index", as: :api, defaults: {format: :json}
 
