@@ -1,0 +1,15 @@
+  <p>
+    <h2>
+      All Registered Users
+    </h2>
+  </p>
+
+  <ol>
+    <% @users.each do |some_user| %>
+      <li>
+        <%= some_user.email %>
+        <%= some_user.first_name %>
+        <%= some_user.last_name %>
+      </li>
+    <% end %>
+  </ol>

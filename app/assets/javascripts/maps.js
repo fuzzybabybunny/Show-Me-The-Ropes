@@ -9,6 +9,32 @@ function getMapData(id, template) {
   })
 }
 
+function getPinData(id, template) {
+  $.ajax({
+    url: "/api/pins/"+id,
+    type: "GET",
+    data: "JSON"
+  }).success(function(data){
+    console.log("Here is all the pin data: " + data);
+    var pinTitle = data["pin"]["activity"];
+    var pinDescription = data["pin"]["description"];
+    var pinLong = data["pin"]["long"];
+    var pinLat = data["pin"]["lat"];
+    var pinGuideLastName = data["pin"]["last_name"];
+    var pinGuideFirstName = data["pin"]["first_name"];
+    var pinGuideReviews = data["pin"]["long"];
+    var pinGuideRating = data["pin"]["rating"];
+    $('#firstHeading').html(pinTitle);
+    $('#bodyContent p').html(pinDescription);
+    $('#pinGuideFirstName').html(pinGuideFirstName);
+    $('#pinGuideLastName p').html(pinGuideLastName);
+    $('#pinGuideReviews').html(pinTitle);
+    $('#pinGuideRating p').html(pinGuideRating);
+    console.log("Pin Title: " + pinTitle);
+    console.log("Guide first name: " + pinGuideFirstName);
+  })
+}
+
 function initialize() {
   var map_canvas = document.getElementById('map_canvas');
   var myLatlng = new google.maps.LatLng(22.25, 114.1667);
@@ -47,16 +73,39 @@ function initialize() {
     position: myLatlng,
     map: map,
     title:"This is marker 1!",
-    id: 2
+    id: 1
   });
   var marker2 = new google.maps.Marker({
     position: myLatlng2,
     draggable:true,
     map: map,
-    title:"This is a draggable marker!"
+    title:"This is a draggable marker!",
+    id: 2
   });
 
 
+// CONTENT OF THE MARKERS
+
+  var contentString = '<div style="width: 250px; height: 150px;" id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+        '<h1 id="firstHeading" class="firstHeading"></h1>'+
+          '<div id="bodyContent">'+
+          '</div>'+
+          '<div id="pinGuideFirstName">, '+
+          '</div>'+
+          '<div id="pinGuideLastName">'+
+          '</div>'+
+          '<div id="pinGuideRating">'+
+          '</div>'+
+          '<div id="pinGuideReviews">'+
+            '<p></p>'+
+          '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString,
+    });
 // ADDING MARKERS
 
 
@@ -77,9 +126,12 @@ function initialize() {
 
 // LISTENING FOR ICON CLICKS
   google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
     console.log(marker.position);
-    console.log(marker.id);
-    getMapData(marker.id);
+    console.log("Pin ID: " + marker.id);
+    // getMapData(marker.id);
+    getPinData(marker.id);
+    // console.log("Pin Title: " + pinTitle);
     //ajax call using marker.id
     //console.log HandlebarsTemplate["something"]
   });
