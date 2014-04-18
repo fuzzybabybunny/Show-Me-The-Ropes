@@ -38,6 +38,11 @@
         Add pin
       </div>
     </div>
+    <div class="item">
+      <div class="ui secondary icon button" id="profile">
+        Profile
+      </div>
+    </div>
 
     <div class="right menu">
       <div class="item">
@@ -68,6 +73,21 @@
   </div>
 
   <div id="map_canvas"></div>
+  <div class="popin">
+  </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $( "#profile" ).on("click", function() {
+    console.log("test");
+    $.ajax('/profile.html', {
+      success: function(response) {
+        $('.popin').html(response).fadeIn();
+        }
+      });
+    });
+  });
+</script>
 
 <script type="text/javascript">
   $('.sidebar').first()
