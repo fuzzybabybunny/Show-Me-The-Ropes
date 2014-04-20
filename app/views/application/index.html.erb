@@ -76,16 +76,6 @@
   <div class="popin"></div>
 
 <script type="text/javascript">
-  $(document).ready(function() {
-  $( "#profile" ).on("click", function() {
-    $.get('/profile.html', function(response) {
-        $('.popin').html(response).fadeIn();
-      });
-    });
-  });
-</script>
-
-<script type="text/javascript">
   $('.sidebar').first()
   .sidebar('attach events', '.toggle.button')
   ;
@@ -94,6 +84,7 @@
   ;
 </script>
 <%= javascript_include_tag "pin_drop" %>
+<%= javascript_include_tag "ajax" %>
 </body>
 
 </html>
