@@ -37,9 +37,57 @@ body {
   height: 100%;
 }
 
-.popin {
+
+/*----- PROFILE -----*/
+
+body, .ui.vertical.divider {
+  color: #696969;
+}
+
+.ui.vertical.divider {
+  margin: 0 4px;
+}
+
+.ui.raised.segment {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 600px;
+  margin-top: 0;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  font-size: 10em;
+  left: 30%;
+  top: 20%;
+}
+
+.ui.inverted.block.header{
+  text-align: center;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+}
+
+.profileWidget{
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.profileWidget .profile{
+  width: 200px;
+  border-radius: 200px;
+  border: 5px solid #DCDDD8;
+  margin-top:-100px;
+  transition:all 0.5s;
+  text-align: center;
+}
+
+.center.aligned.column p{
+  text-align: justify;
+  margin: 0;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  font-size: 30px;
+  line-height: 30px;
+  color: #777;
+  font-family: 'Helvetica';
 }
