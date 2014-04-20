@@ -6,3 +6,6 @@ end
 
 def index
 end
+
+def profile
+end
