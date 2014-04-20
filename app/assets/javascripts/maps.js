@@ -25,7 +25,7 @@ function getPinData(id, template) {
     var pinGuideReviews = data["pin"]["long"];
     var pinGuideRating = data["pin"]["rating"];
     $('#firstHeading').html(pinTitle);
-    $('#bodyContent p').html(pinDescription);
+    $('#bodyContent').html(pinDescription);
     $('#pinGuideFirstName').html(pinGuideFirstName);
     $('#pinGuideLastName p').html(pinGuideLastName);
     $('#pinGuideReviews').html(pinTitle);
