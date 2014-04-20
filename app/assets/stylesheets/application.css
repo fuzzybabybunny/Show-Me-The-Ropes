@@ -90,4 +90,5 @@ body, .ui.vertical.divider {
   line-height: 30px;
   color: #777;
   font-family: 'Helvetica';
+  cursor:pointer;
 }
