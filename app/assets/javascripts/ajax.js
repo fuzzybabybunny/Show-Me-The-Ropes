@@ -11,4 +11,10 @@ $(document).ready(function() {
       });
     });
 
+  $("#loginButton").on("click", function() {
+    $.get("/logged_in.html", function(response) {
+      $("#userControl").html(response).fadeIn();
+    });
+  });
+
   });
