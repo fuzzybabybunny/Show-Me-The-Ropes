@@ -93,7 +93,26 @@ body, .ui.vertical.divider {
   cursor:pointer;
 }
 
-/* Absolute Center CSS Spinner */
+.ui.blue.button{
+  position:absolute;
+  right:35px;
+  bottom: 15px;
+}
+
+
+/*----- SPINNER -----*/
+
+.message{
+  margin-top: 0;
+  position: fixed;
+  left: 30%;
+  top: 20%;
+}
+
+
+
+/*----- SPINNER -----*/
+
 .loading {
   position: fixed;
   z-index: 999;

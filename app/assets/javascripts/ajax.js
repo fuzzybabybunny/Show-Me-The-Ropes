@@ -19,4 +19,11 @@ $(document).ready(function() {
       });
     });
 
+  $( "#message" ).on("click", function() {
+    $.get('/message.html', function(response) {
+        $('.popin').html(response).fadeIn();
+      });
+    });
+
+
   });
