@@ -113,17 +113,6 @@ body, .ui.vertical.divider {
 
 /*----- SPINNER -----*/
 
-.message{
-  margin-top: 0;
-  position: fixed;
-  left: 30%;
-  top: 20%;
-}
-
-
-
-/*----- SPINNER -----*/
-
 .loading {
   position: fixed;
   z-index: 999;

@@ -15,3 +15,6 @@ end
 
 def pindrop
 end
+
+def register
+end

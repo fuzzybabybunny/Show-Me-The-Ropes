@@ -5,7 +5,7 @@ ShowMeTheRopes::Application.routes.draw do
   get     'profile'   => 'application#profile'
   get     'message'   => 'application#message'
   get     'pindrop'   => 'application#pindrop'
-  #test
+  get     'register'   => 'application#register'
 
   scope :api do
     get '' => "api#index", as: :api, defaults: {format: :json}
