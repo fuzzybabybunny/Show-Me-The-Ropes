@@ -1,6 +1,8 @@
 ShowMeTheRopes::Application.routes.draw do
 
   root 'application#index'
+
+  get     'profile'   => 'application#profile'
   #test
 
   scope :api do

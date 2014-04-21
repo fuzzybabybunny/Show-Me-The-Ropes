@@ -39,6 +39,11 @@
         Add pin
       </div>
     </div>
+    <div class="item">
+      <div class="ui secondary icon button" id="profile">
+        Profile
+      </div>
+    </div>
 
     <div class="right menu">
       <div class="item">
@@ -69,6 +74,7 @@
   </div>
 
   <div id="map_canvas"></div>
+  <div class="popin"></div>
 
 <script type="text/javascript">
   $('.sidebar').first()
@@ -79,6 +85,7 @@
   ;
 </script>
 <%= javascript_include_tag "pin_drop" %>
+<%= javascript_include_tag "ajax" %>
 </body>
 
 </html>
