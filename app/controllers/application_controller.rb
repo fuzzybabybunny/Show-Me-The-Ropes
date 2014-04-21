@@ -12,3 +12,6 @@ end
 
 def message
 end
+
+def pindrop
+end

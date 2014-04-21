@@ -38,6 +38,13 @@ body {
 }
 
 
+/*----- PINS -----*/
+
+#bodyContent, #pinGuideFirstName, #pinGuideRating{
+  margin-top: -10px;
+}
+
+
 /*----- PROFILE -----*/
 
 body, .ui.vertical.divider {
