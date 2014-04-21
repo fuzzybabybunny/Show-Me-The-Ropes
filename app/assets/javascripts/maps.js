@@ -20,18 +20,17 @@ function getPinData(id, template) {
     var pinDescription = data["pin"]["description"];
     var pinLong = data["pin"]["long"];
     var pinLat = data["pin"]["lat"];
-    var pinGuideLastName = data["pin"]["last_name"];
-    var pinGuideFirstName = data["pin"]["first_name"];
-    var pinGuideReviews = data["pin"]["long"];
-    var pinGuideRating = data["pin"]["rating"];
+    var pinGuideFirstName = data["pin"]["guide_first_name"];
+    var pinGuideLastName = data["pin"]["guide_last_name"];
+    var pinGuideRating = data["pin"]["guide_rating"];
+    // var pinGuideReviews = data["pin"]["guide_textReview"];
+
     $('#firstHeading').html(pinTitle);
     $('#bodyContent').html(pinDescription);
     $('#pinGuideFirstName').html(pinGuideFirstName);
-    $('#pinGuideLastName p').html(pinGuideLastName);
-    $('#pinGuideReviews').html(pinTitle);
-    $('#pinGuideRating p').html(pinGuideRating);
-    console.log("Pin Title: " + pinTitle);
-    console.log("Guide first name: " + pinGuideFirstName);
+    $('#pinGuideLastName').html(pinGuideLastName);
+    $('#pinGuideRating').html(pinGuideRating);
+    // $('#pinGuideReviews').html(pinGuideReviews);
   })
 }
 
@@ -86,7 +85,7 @@ function initialize() {
 
 // CONTENT OF THE MARKERS
 
-  var contentString = '<div style="width: 250px; height: 150px;" id="content">'+
+  var contentString = '<div style="width: 500px; height: 300px;" id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
         '<h1 id="firstHeading" class="firstHeading"></h1>'+
@@ -97,10 +96,10 @@ function initialize() {
           '<div id="pinGuideLastName">'+
           '</div>'+
           '<div id="pinGuideRating">'+
-          '</div>'+
-          '<div id="pinGuideReviews">'+
-            '<p></p>'+
-          '</div>'+
+          '</div>'
+          // '<div id="pinGuideReviews">'+
+          //   '<p></p>'+
+          // '</div>'+
       '</div>';
 
   var infowindow = new google.maps.InfoWindow({
