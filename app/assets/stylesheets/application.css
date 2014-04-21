@@ -152,6 +152,20 @@ body, .ui.vertical.divider {
 }
 
 
+/*----- REGISTER -----*/
+.ui.textarea, .ui.form textarea {
+  height: 5em !important;
+}
+
+#pic_upload {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#register_submit_button {
+  padding-left: 155px;
+}
+
 /*----- SPINNER -----*/
 
 .loading {
