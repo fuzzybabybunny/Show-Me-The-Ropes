@@ -27,8 +27,7 @@ function getPinData(id, template) {
 
     $('#firstHeading').html(pinTitle);
     $('#bodyContent').html(pinDescription);
-    $('#pinGuideFirstName').html(pinGuideFirstName);
-    $('#pinGuideLastName').html(pinGuideLastName);
+    $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
     // $('#pinGuideReviews').html(pinGuideReviews);
   })
@@ -85,28 +84,12 @@ function initialize() {
 
 // CONTENT OF THE MARKERS
 
-  var contentString = '<div style="width: 500px; height: 300px;" id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-        '<h1 id="firstHeading" class="firstHeading"></h1>'+
-          '<div id="bodyContent">'+
-          '</div>'+
-          '<div id="pinGuideFirstName">, '+
-          '</div>'+
-          '<div id="pinGuideLastName">'+
-          '</div>'+
-          '<div id="pinGuideRating">'+
-          '</div>'
-          // '<div id="pinGuideReviews">'+
-          //   '<p></p>'+
-          // '</div>'+
-      '</div>';
+  var pinContent = document.getElementById('pinContent');
 
   var infowindow = new google.maps.InfoWindow({
-      content: contentString,
+      content: pinContent,
     });
 // ADDING MARKERS
-
 
   // function placeMarker(location) {
   // var marker = new google.maps.Marker({
@@ -128,11 +111,7 @@ function initialize() {
     infowindow.open(map,marker);
     console.log(marker.position);
     console.log("Pin ID: " + marker.id);
-    // getMapData(marker.id);
     getPinData(marker.id);
-    // console.log("Pin Title: " + pinTitle);
-    //ajax call using marker.id
-    //console.log HandlebarsTemplate["something"]
   });
 
 }

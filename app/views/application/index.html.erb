@@ -86,6 +86,21 @@
 </script>
 <%= javascript_include_tag "pin_drop" %>
 <%= javascript_include_tag "ajax" %>
+
+<!--Defining the structure of the pin popup window on load
+to allow ajax to grab it -->
+
+<div id="pinContent">
+  <div id="siteNotice"></div>
+    <h1 id="firstHeading" class="firstHeading"></h1>
+    <div id="bodyContent">
+    </div>
+    <div class="ui secondary icon button" id="pinGuideName">
+    </div>
+    <div id="pinGuideRating">
+    </div>
+</div>
+
 </body>
 
 </html>
