@@ -37,6 +37,12 @@ body {
   height: 100%;
 }
 
+/*----- PIN POPUP CONTENT -----*/
+
+#pinContent {
+  width: 500px;
+  height: 300px;
+}
 
 /*----- PROFILE -----*/
 
