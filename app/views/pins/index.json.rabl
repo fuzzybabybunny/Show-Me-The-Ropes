@@ -26,3 +26,4 @@ end
 node :guide_href do |pin|
   guide_url(pin.guide)
 end
+

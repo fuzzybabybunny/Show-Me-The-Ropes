@@ -9,6 +9,30 @@ function getMapData(id, template) {
   })
 }
 
+function getPinData(id, template) {
+  $.ajax({
+    url: "/api/pins/"+id,
+    type: "GET",
+    data: "JSON"
+  }).success(function(data){
+    console.log("Here is all the pin data: " + data);
+    var pinTitle = data["pin"]["activity"];
+    var pinDescription = data["pin"]["description"];
+    var pinLong = data["pin"]["long"];
+    var pinLat = data["pin"]["lat"];
+    var pinGuideFirstName = data["pin"]["guide_first_name"];
+    var pinGuideLastName = data["pin"]["guide_last_name"];
+    var pinGuideRating = data["pin"]["guide_rating"];
+    // var pinGuideReviews = data["pin"]["guide_textReview"];
+
+    $('#firstHeading').html(pinTitle);
+    $('#bodyContent').html(pinDescription);
+    $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
+    $('#pinGuideRating').html(pinGuideRating);
+    // $('#pinGuideReviews').html(pinGuideReviews);
+  })
+}
+
 function initialize() {
   var map_canvas = document.getElementById('map_canvas');
   var myLatlng = new google.maps.LatLng(22.25, 114.1667);
@@ -47,18 +71,25 @@ function initialize() {
     position: myLatlng,
     map: map,
     title:"This is marker 1!",
-    id: 2
+    id: 1
   });
   var marker2 = new google.maps.Marker({
     position: myLatlng2,
     draggable:true,
     map: map,
-    title:"This is a draggable marker!"
+    title:"This is a draggable marker!",
+    id: 2
   });
 
 
-// ADDING MARKERS
+// CONTENT OF THE MARKERS
 
+  var pinContent = document.getElementById('pinContent');
+
+  var infowindow = new google.maps.InfoWindow({
+      content: pinContent,
+    });
+// ADDING MARKERS
 
   // function placeMarker(location) {
   // var marker = new google.maps.Marker({
@@ -77,11 +108,10 @@ function initialize() {
 
 // LISTENING FOR ICON CLICKS
   google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
     console.log(marker.position);
-    console.log(marker.id);
-    getMapData(marker.id);
-    //ajax call using marker.id
-    //console.log HandlebarsTemplate["something"]
+    console.log("Pin ID: " + marker.id);
+    getPinData(marker.id);
   });
 
 }

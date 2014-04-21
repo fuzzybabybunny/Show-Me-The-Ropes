@@ -14,7 +14,9 @@ ShowMeTheRopes::Application.routes.draw do
   patch   'reset/:code' => 'password#update'
 
   get     'profile'   => 'application#profile'
-  #test
+  get     'message'   => 'application#message'
+  get     'pindrop'   => 'application#pindrop'
+  get     'register'   => 'application#register'
 
   scope :api do
     get '' => "api#index", as: :api, defaults: {format: :json}

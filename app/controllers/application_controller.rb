@@ -47,3 +47,12 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+def message
+end
+
+def pindrop
+end
+
+def register
+end
