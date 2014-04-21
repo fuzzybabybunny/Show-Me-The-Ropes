@@ -4,6 +4,7 @@ ShowMeTheRopes::Application.routes.draw do
 
   get     'profile'   => 'application#profile'
   get     'message'   => 'application#message'
+  get     'pindrop'   => 'application#pindrop'
   #test
 
   scope :api do

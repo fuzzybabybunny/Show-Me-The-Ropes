@@ -89,14 +89,17 @@ function initialize() {
       '<div id="siteNotice">'+
       '</div>'+
         '<h1 id="firstHeading" class="firstHeading"></h1>'+
-          '<div id="bodyContent">'+
-          '</div>'+
-          '<div id="pinGuideFirstName">, '+
-          '</div>'+
-          '<div id="pinGuideLastName">'+
-          '</div>'+
-          '<div id="pinGuideRating">'+
-          '</div>'
+          '<h3>Description:</h3>' +
+            '<p id="bodyContent">'+
+            '</p>'+
+          '<h3>Guide:</h3>' +
+            '<div id="pinGuideFirstName">, '+
+            '</div>'+
+            '<div id="pinGuideLastName">'+
+            '</div>'+
+          '<h3>Guide rating:</h3>' +
+            '<div id="pinGuideRating">'+
+            '</div>'
           // '<div id="pinGuideReviews">'+
           //   '<p></p>'+
           // '</div>'+
