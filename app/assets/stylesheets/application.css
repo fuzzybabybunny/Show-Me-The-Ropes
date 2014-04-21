@@ -99,6 +99,11 @@ body, .ui.vertical.divider {
   cursor:pointer;
 }
 
+#messageclose {
+  right: 20px;
+  bottom: 16px;
+}
+
 .ui.blue.button{
   position:absolute;
   right:35px;
