@@ -7,7 +7,8 @@ class SessionController < ApplicationController
     # @messages = flash.inspect
     # @messages = flash.map {| key, value| "#{key.capitalize}: #{value}"}.join(";")
     # render text: "Display the log in form."
-    redirect_to index_url notice: "You are logged in." if current_user
+    # redirect_to root_url notice: "You are logged in." if current_user
+    render "Test"
   end
 
   def create
@@ -19,7 +20,7 @@ class SessionController < ApplicationController
       return if log_user_in( UserAuthenticator.new(session,flash).authenticate_user(user_params) )
     end
     # (redirect_to root_url and return) if flash.empty?
-    render :new
+    render :index
   end
 
   def destroy

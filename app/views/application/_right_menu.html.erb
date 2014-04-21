@@ -1,0 +1,16 @@
+<div id="right_menu" class="right menu">
+  <%= form_for :user, url: login_url do |f| %>
+    <div class="item">
+      <%= f.text_field :email, class: "ui input", placeholder: "Email" %>
+    </div>
+    <div class="item">
+      <%= f.password_field :password, class: "ui input", placeholder: "Password" %>
+    </div>
+    <div class="item">
+      <%= f.submit "Log In", class: "ui button" %>
+    </div>
+    <div class="item">
+      <div class="ui teal button" id="register">Sign up</div>
+    </div>
+  <% end %>
+</div>

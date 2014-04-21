@@ -11,11 +11,20 @@ class ApplicationController < ActionController::Base
   def profile
   end
 
+  def message
+  end
+
+  def pindrop
+  end
+
+  def register
+  end
+
   def is_authenticated?
     # check session hash for a :user_id (true/false)
     # not session[:user_id].nil?
     # redirect_to login_url if session[:user_id].nil?
-    redirect_to login_url unless current_user
+    redirect_to root_url unless current_user
   end
 
   def current_user
@@ -31,7 +40,7 @@ class ApplicationController < ActionController::Base
   end
 
   def flash_notice_user_created(notice = nil)
-    redirect_to admin_url, notice: notice
+    redirect_to root_url, notice: notice
   end
 
   def log_user_out
@@ -46,13 +55,4 @@ class ApplicationController < ActionController::Base
     ActionMailer::Base.default_url_options[:host] = request.host_with_port
   end
 
-end
-
-def message
-end
-
-def pindrop
-end
-
-def register
 end

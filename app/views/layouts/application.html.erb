@@ -1,14 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ShowMeTheRopes</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
-<%= yield %>
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properities -->
+  <title>Show me the ropes</title>
+
+  <link rel="stylesheet" type="text/css" href="semantic-ui">
+  <link rel="stylesheet" type="text/css" href="application">
+  <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+  <%= javascript_include_tag "semantic-ui" %>
+  <%= javascript_include_tag "homepage" %>
+  <script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyA5wHc9c4B8RD4lPT_Sbr0ZybZI3kwY0sM&sensor=false"></script>
+  <%= javascript_include_tag "maps" %>
+
+</head>
+
+<body id="home">
+
+  <%= yield %>
+
+  <div id="map_canvas"></div>
+  <div class="popin"></div>
+
+<script type="text/javascript">
+  $('.sidebar').first()
+  .sidebar('attach events', '.toggle.button')
+  ;
+  $('.toggle.button')
+    .removeClass('disabled')
+  ;
+</script>
+<%= javascript_include_tag "pin_drop" %>
+<%= javascript_include_tag "ajax" %>
+
+<!--Defining the structure of the pin popup window on load
+to allow ajax to grab it -->
+
+<div id="pinContent">
+  <div id="siteNotice"></div>
+    <h1 id="firstHeading" class="firstHeading"></h1>
+    <div id="bodyContent">
+    </div>
+    <div class="ui secondary icon button" id="pinGuideName">
+    </div>
+    <div id="pinGuideRating">
+    </div>
+</div>
 
 </body>
+
 </html>

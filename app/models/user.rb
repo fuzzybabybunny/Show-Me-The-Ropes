@@ -9,13 +9,6 @@ class User < ActiveRecord::Base
   has_one :guide
   has_one :rookie
 
-  field :email, type: String
-  field :salt, type: String
-  field :fish, type: String
-  field :code, type: String
-  field :expires_at, type: Time
-  field :role, type: String
-
   before_save :set_random_password, :encrypt_password
   validates :email, presence: true, uniqueness: {case_sensitive: false}
   # validates :first_name, presence: true
