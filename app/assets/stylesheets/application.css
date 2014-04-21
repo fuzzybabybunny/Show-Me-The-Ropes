@@ -159,6 +159,7 @@ body, .ui.vertical.divider {
 
 #pic_upload {
   font-size: 1em;
+  cursor: pointer;
 }
 
 #register_submit_button {
