@@ -9,3 +9,6 @@ end
 
 def profile
 end
+
+def message
+end
