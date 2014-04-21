@@ -68,6 +68,19 @@ body {
   height: 300px;
 }
 
+#bodyContent, #pinGuideName, #pinGuideRating {
+  margin-top: -10px;
+}
+
+#pinGuideName{
+  cursor: pointer;
+  color: blue;
+}
+
+#pinGuideName:hover {
+text-decoration: underline;
+}
+
 /*----- PROFILE -----*/
 
 body, .ui.vertical.divider {
