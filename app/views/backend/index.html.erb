@@ -1,0 +1,59 @@
+
+  <div class="ui fixed transparent inverted menu">
+    <a class="active item brand">
+      <i class="white url icon"></i> Show me the Ropes
+    </a>
+
+    <div class="item">
+      <div class="ui secondary labeled icon toggle button">
+        <i class="reorder icon"></i> Activities
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui secondary icon button" id="addpin">
+        Add pin
+      </div>
+    </div>
+
+    <div id="right_menu" class="item right menu">
+      <h1>You are logged in!</h1>
+      <%= link_to( "Log Out", logout_url, method: :delete) %>
+    </div>
+
+  </div>
+  <div class="ui left top sidebar">
+    <a class="active item">
+      <i class="heart large icon"></i>
+    </a>
+    <a class="active item">
+      <i class="heart large icon"></i>
+    </a>
+  </div>
+
+  <div id="map_canvas"></div>
+  <div class="popin"></div>
+
+<script type="text/javascript">
+  $('.sidebar').first()
+  .sidebar('attach events', '.toggle.button')
+  ;
+  $('.toggle.button')
+    .removeClass('disabled')
+  ;
+</script>
+<%= javascript_include_tag "pin_drop" %>
+<%= javascript_include_tag "ajax" %>
+
+<!--Defining the structure of the pin popup window on load
+to allow ajax to grab it -->
+
+<div id="pinContent">
+  <div id="siteNotice"></div>
+    <h1 id="firstHeading" class="firstHeading"></h1>
+    <h3> Description </h3>
+      <div id="bodyContent"></div>
+    <h3> Guide </h3>
+      <div id="pinGuideName"></div>
+    <h3> Guide rating </h3>
+      <div id="pinGuideRating"></div>
+</div>
