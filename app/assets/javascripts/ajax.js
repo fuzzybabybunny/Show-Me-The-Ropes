@@ -28,19 +28,19 @@ $(document).ready(function() {
       });
     });
 
-  $( "#addpin" ).on("click", function() {
-    $.ajax('/pindrop.html', {
-      success: function(response) {
-        $('.popin').html(response).fadeIn();
-        },
-      beforeSend: function() {
-        $('.popin').addClass('loading');
-        },
-      complete: function() {
-        $('.popin').removeClass('loading');
-        }
-      });
-    });
+  // $( "#addpin" ).on("click", function() {
+  //   $.ajax('/pindrop.html', {
+  //     success: function(response) {
+  //       $('.popin').html(response).fadeIn();
+  //       },
+  //     beforeSend: function() {
+  //       $('.popin').addClass('loading');
+  //       },
+  //     complete: function() {
+  //       $('.popin').removeClass('loading');
+  //       }
+  //     });
+  //   });
 
   // $( "#pinGuideName" ).on("click", function() {
   //   $.ajax({
