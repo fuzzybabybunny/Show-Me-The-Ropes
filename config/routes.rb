@@ -24,40 +24,24 @@ ShowMeTheRopes::Application.routes.draw do
   # AFTER LOGIN
   get     'admin'     => 'backend#index'
 
-  scope :api, except: [ :show, :new, :edit ], defaults: { format: :json } do
+  scope :api, except: [ :new, :edit ], defaults: { format: :json } do
     get '' => "api#index", as: :api
 
-    resources :users do
-      get ':id' => "users#show", on: :collection
-    end
+    resources :users
 
-    resources :guides do
-      get ':id' => "guides#show", on: :collection
-    end
+    resources :guides
 
-    resources :rookies do
-      get ':id' => "rookies#show", on: :collection
-    end
+    resources :rookies
 
-    resources :guide_reviews do
-      get ':id' => "guide_reviews#show", on: :collection
-    end
+    resources :guide_reviews
 
-    resources :rookie_reviews do
-      get ':id' => "rookie_reviews#show", on: :collection
-    end
+    resources :rookie_reviews
 
-    resources :pins do
-      get ':id' => "pins#show", on: :collection
-    end
+    resources :pins
 
-    resources :rookie_messages do
-      get ':id' => "rookie_messages#show", on: :collection
-    end
+    resources :rookie_messages
 
-    resources :guide_messages do
-      get ':id' => "guide_messages#show", on: :collection
-    end
+    resources :guide_messages
 
 
 
