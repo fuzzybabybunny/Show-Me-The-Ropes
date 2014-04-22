@@ -138,7 +138,7 @@ body, .ui.vertical.divider {
   margin:     0;
 }
 
-.close {
+.close_profile, .close_register, .close_message, .close_pindrop {
   position: absolute;
   right:        10px;
   bottom:       6px;

@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
   def pindrop
   end
 
-  def register
-  end
+  # def register
+  # end
 
   def is_authenticated?
     # check session hash for a :user_id (true/false)
