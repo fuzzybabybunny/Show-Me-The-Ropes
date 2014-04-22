@@ -19,6 +19,7 @@ ShowMeTheRopes::Application.routes.draw do
 
   # REGISTRATION
   get     'register'   => 'register#form'
+  post    'register'   => 'register#create'
 
   # AFTER LOGIN
   get     'admin'     => 'backend#index'

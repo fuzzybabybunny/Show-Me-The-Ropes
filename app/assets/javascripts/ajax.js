@@ -60,6 +60,12 @@ $(document).ready(function() {
       });
     });
 
+  $( ".close_pindrop" ).on("click", function() {
+    $.get('/pindrop.html', function(response) {
+        $('.popin').html(response).fadeOut();
+      });
+    });
+
   $("#loginButton").on("click", function() {
     $.get("/logged_in.html", function(response) {
       $("#userControl").html(response).fadeIn();
