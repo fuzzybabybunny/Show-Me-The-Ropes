@@ -1,17 +1,4 @@
 $(document).ready(function() {
-  $( "#profile" ).on("click", function() {
-    $.ajax('/profile.html', {
-      success: function(response) {
-        $('.popin').html(response).fadeIn();
-        },
-      beforeSend: function() {
-        $('.popin').addClass('loading');
-        },
-      complete: function() {
-        $('.popin').removeClass('loading');
-        }
-      });
-    });
 
   $( "#pinGuideName" ).on("click", function() {
     $.ajax('/profile.html', {
@@ -55,8 +42,20 @@ $(document).ready(function() {
   //   });
   // });
 
-  $( ".close" ).on("click", function() {
+  $( ".close_profile" ).on("click", function() {
     $.get('/profile.html', function(response) {
+        $('.popin').html(response).fadeOut();
+      });
+    });
+
+  $( ".close_register" ).on("click", function() {
+    $.get('/register.html', function(response) {
+        $('.popin').html(response).fadeOut();
+      });
+    });
+
+  $( ".close_message" ).on("click", function() {
+    $.get('/message.html', function(response) {
         $('.popin').html(response).fadeOut();
       });
     });

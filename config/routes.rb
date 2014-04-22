@@ -16,7 +16,9 @@ ShowMeTheRopes::Application.routes.draw do
   get     'profile'   => 'application#profile'
   get     'message'   => 'application#message'
   get     'pindrop'   => 'application#pindrop'
-  get     'register'   => 'application#register'
+
+  # REGISTRATION
+  get     'register'   => 'register#form'
 
   # AFTER LOGIN
   get     'admin'     => 'backend#index'
