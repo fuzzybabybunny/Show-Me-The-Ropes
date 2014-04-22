@@ -73,6 +73,11 @@ body {
   height: 300px;
 }
 
+#newPinForm {
+  width: 500px;
+  height: 300px;
+}
+
 #bodyContent, #pinGuideName, #pinGuideRating {
   margin-top: -10px;
 }
