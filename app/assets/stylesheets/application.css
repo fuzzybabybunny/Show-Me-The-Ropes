@@ -27,34 +27,46 @@ body {
 
 .brand{
   font-family: 'Swanky and Moo Moo', cursive;
+  height: 60px;
+
 }
 
 .button{
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
 }
-/*
-.right_menu {
-  margin-top: 5px;
-}*/
 
-.ui.input input {
+
+/*.ui.input input {
   margin-top: 3px !important;
   font-size: 14px !important;
   height: 31px;
   padding: 5px !important;
-}
+}*/
 
 .ui.input.password {
-  width: 150px !important;
+  width:          150px !important;
+  margin-top:     2px !important;
+  margin-bottom:  2px !important;
+  font-size:      14px !important;
+  height:         16px;
+  padding:        5px !important;
+  -webkit-border-radius: 5px;
 }
 
 .ui.input.email {
-  width: 220px !important;
+  width:          220px !important;
+  margin-top:     2px !important;
+  margin-bottom:  2px !important;
+  font-size:      14px !important;
+  height:         16px;
+  padding:        5px !important;
+  -webkit-border-radius: 5px;
 }
 
+
 .item {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left:   5px;
+  padding-right:  5px;
 }
 
 #map_canvas {
@@ -64,7 +76,7 @@ body {
 /*----- PIN POPUP CONTENT -----*/
 
 #pinContent {
-  width: 500px;
+  width:  500px;
   height: 300px;
 }
 
@@ -74,7 +86,7 @@ body {
 
 #pinGuideName{
   cursor: pointer;
-  color: blue;
+  color:  blue;
 }
 
 #pinGuideName:hover {
@@ -93,57 +105,58 @@ body, .ui.vertical.divider {
 
 .ui.raised.segment {
   background-color: rgba(255, 255, 255, 0.9);
-  width: 600px;
+  width:      600px;
   margin-top: 0;
-  position: fixed;
-  left: 30%;
-  top: 20%;
+  position:   fixed;
+  left:       30%;
+  top:        20%;
 }
 
 .ui.inverted.block.header{
-  text-align: center;
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  text-align:   center;
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
 }
 
 .profileWidget{
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
-  text-align: center;
-  padding-top: 15px;
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  text-align:   center;
+  padding-top:  15px;
 }
 
 .profileWidget .profile{
-  width: 200px;
-  border-radius: 200px;
-  border: 5px solid #DCDDD8;
-  margin-top:-100px;
-  transition:all 0.5s;
-  text-align: center;
+  width:          200px;
+  border-radius:  200px;
+  border:         5px solid #DCDDD8;
+  margin-top:     -100px;
+  transition:     all 0.5s;
+  text-align:     center;
+
 }
 
 .center.aligned.column p{
   text-align: justify;
-  margin: 0;
+  margin:     0;
 }
 
 .close {
   position: absolute;
-  right: 10px;
-  bottom: 6px;
-  font-size: 30px;
-  line-height: 30px;
-  color: #777;
-  font-family: 'Helvetica';
+  right:        10px;
+  bottom:       6px;
+  font-size:    30px;
+  line-height:  30px;
+  color:        #777;
+  font-family:  'Helvetica';
   cursor:pointer;
 }
 
 #messageclose {
-  right: 20px;
+  right:  20px;
   bottom: 16px;
 }
 
 .ui.blue.button{
   position:absolute;
-  right:35px;
+  right:  35px;
   bottom: 15px;
 }
 
@@ -166,46 +179,46 @@ body, .ui.vertical.divider {
 
 .loading {
   position: fixed;
-  z-index: 999;
-  height: 2em;
-  width: 2em;
+  z-index:  999;
+  height:   2em;
+  width:    2em;
   overflow: show;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  margin:   auto;
+  top:      0;
+  left:     0;
+  bottom:   0;
+  right:    0;
 }
 
 /* Transparent Overlay */
 .loading:before {
-  content: '';
-  display: block;
+  content:  '';
+  display:  block;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:      0;
+  left:     0;
+  width:    100%;
+  height:   100%;
   background-color: rgba(0,0,0,0.3);
 }
 
 /* :not(:required) hides these rules from IE9 and below */
 .loading:not(:required) {
   /* hide "loading..." text */
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
+  font:             0/0 a;
+  color:            transparent;
+  text-shadow:      none;
   background-color: transparent;
-  border: 0;
+  border:            0;
 }
 
 .loading:not(:required):after {
-  content: '';
-  display: block;
-  font-size: 10px;
-  width: 1em;
-  height: 1em;
-  margin-top: -0.5em;
+  content:        '';
+  display:        block;
+  font-size:      10px;
+  width:          1em;
+  height:         1em;
+  margin-top:     -0.5em;
   -webkit-animation: spinner 1500ms infinite linear;
   -moz-animation: spinner 1500ms infinite linear;
   -ms-animation: spinner 1500ms infinite linear;
@@ -220,65 +233,72 @@ body, .ui.vertical.divider {
 
 @-webkit-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform:  rotate(0deg);
+    -moz-transform:     rotate(0deg);
+    -ms-transform:      rotate(0deg);
+    -o-transform:       rotate(0deg);
+    transform:          rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform:  rotate(360deg);
+    -moz-transform:     rotate(360deg);
+    -ms-transform:      rotate(360deg);
+    -o-transform:       rotate(360deg);
+    transform:          rotate(360deg);
   }
 }
 @-moz-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform:  rotate(0deg);
+    -moz-transform:     rotate(0deg);
+    -ms-transform:      rotate(0deg);
+    -o-transform:       rotate(0deg);
+    transform:          rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform:  rotate(360deg);
+    -moz-transform:     rotate(360deg);
+    -ms-transform:      rotate(360deg);
+    -o-transform:       rotate(360deg);
+    transform:          rotate(360deg);
   }
 }
 @-o-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform:  rotate(0deg);
+    -moz-transform:     rotate(0deg);
+    -ms-transform:      rotate(0deg);
+    -o-transform:       rotate(0deg);
+    transform:          rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform:  rotate(360deg);
+    -moz-transform:     rotate(360deg);
+    -ms-transform:      rotate(360deg);
+    -o-transform:       rotate(360deg);
+    transform:          rotate(360deg);
   }
 }
 @keyframes spinner {
   0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform:  rotate(0deg);
+    -moz-transform:     rotate(0deg);
+    -ms-transform:      rotate(0deg);
+    -o-transform:       rotate(0deg);
+    transform:          rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform:  rotate(360deg);
+    -moz-transform:     rotate(360deg);
+    -ms-transform:      rotate(360deg);
+    -o-transform:       rotate(360deg);
+    transform:          rotate(360deg);
+  }
+}
+
+/*Breakpoints are 768px and below for mobile, 768-992px for tablet and 992px+ for computer*/
+@media only screen and (max-width: 768px) {
+  .right_menu {
+    display: collapse;
   }
 }
