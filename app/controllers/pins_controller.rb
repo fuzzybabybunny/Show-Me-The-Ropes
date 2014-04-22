@@ -24,7 +24,7 @@ class PinsController < ApplicationController
     @pins = Pin.find params[:id]
 
     if @pins
-      if @pins.update_attributes(buyer_params)
+      if @pins.update_attributes(pin_params)
         head :no_content
       else
         head :unprocessable_entity
