@@ -30,6 +30,16 @@ $( "#addpin" ).on( "click", function() {
 
     });
 
+    var contentString = document.getElementById('newPinForm');
+
+    var newPinInfoWindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      newPinInfoWindow.open(map,marker);
+    });
+
   };
 
 });
