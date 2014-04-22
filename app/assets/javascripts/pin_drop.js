@@ -1,8 +1,10 @@
 $( "#addpin" ).on( "click", function() {
-
   console.log("pindrop on");
 
   google.maps.event.addListener(map, 'click', function(event) {
+    // setTimeout(function(){
+    // $ ( "#newPinForm" ).removeClass("hide");
+    // },2000);
     placeMarker(event.latLng);
   });
 
