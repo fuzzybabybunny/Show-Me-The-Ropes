@@ -1,9 +1,9 @@
 <div id="right_menu" class="right menu">
   <%= form_for :user, url: login_url do |f| %>
-    <div class="item">
+    <div class="item" id="nav_login">
       <%= f.text_field :email, class: "ui input email", placeholder: "Email" %>
     </div>
-    <div class="item">
+    <div class="item" id="nav_login">
       <%= f.password_field :password, class: "ui input password", placeholder: "Password" %>
     </div>
     <div class="item">
