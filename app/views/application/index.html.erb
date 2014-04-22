@@ -42,8 +42,6 @@
     .removeClass('disabled')
   ;
 </script>
-<%= javascript_include_tag "pin_drop" %>
-<%= javascript_include_tag "ajax" %>
 
 <!--Defining the structure of the pin popup window on load
 to allow ajax to grab it -->
@@ -59,9 +57,9 @@ to allow ajax to grab it -->
       <div id="pinGuideRating"></div>
 </div>
 
-<div id="newPinForm">
-  <div>
-    <div>
+<div id="newPinForm" class="">
+  <div class="">
+    <div class="">
     <%= form_for :pin, html: {class: "ui form attached fluid segment"}, url: pins_url do |f| %>
       <div class="field">
         <label>Pin title</label>
@@ -77,8 +75,11 @@ to allow ajax to grab it -->
           <label for="terms">I agree to the terms and conditions</label>
         </div>
       </div>
-      <%= f.submit "Submit", class: "ui blue submit button" %>
+      <%= f.submit "Submit", class: "ui blue submit button", id:"pin_submit" %>
     <% end %>
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag "pin_drop" %>
+<%= javascript_include_tag "ajax" %>
