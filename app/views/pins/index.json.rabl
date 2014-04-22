@@ -27,3 +27,7 @@ node :guide_href do |pin|
   guide_url(pin.guide)
 end
 
+node :avatar do |pin|
+  pin.guide.user.avatar
+end
+

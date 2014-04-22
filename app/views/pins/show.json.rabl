@@ -22,3 +22,7 @@ end
 node :guide_href do |pin|
   guide_url(pin.guide)
 end
+
+node :guide_avatar do |pin|
+  pin.guide.user.avatar
+end

@@ -45,6 +45,7 @@ gem 'therubyracer', platforms: :ruby # or any other runtime
 gem 'rabl'
 
 gem 'oj'
+gem 'carrierwave'
 
 
 group :development, :test do

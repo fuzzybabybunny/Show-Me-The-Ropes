@@ -49,6 +49,15 @@ body {
   margin: 6px 0 -6px 0;
 }
 
+/*.ui.input input {
+  margin-top: 3px !important;
+  font-size: 14px !important;
+  height: 31px;
+  padding: 5px !important;
+}*/
+
+/*----- NAV BAR -----*/
+
 .ui.input.password, .ui.input.email {
   padding-left: 10px;
   -webkit-border-radius: 5px;
@@ -58,6 +67,8 @@ body {
   padding-left:   5px;
   padding-right:  5px;
 }
+
+/*----- BODY -----*/
 
 #map_canvas {
   height: 100%;
@@ -192,9 +203,15 @@ body, .ui.vertical.divider {
   vertical-align: top !important;
 }
 
-#pic_upload {
-  font-size: 1em;
-  cursor: pointer;
+#user_avatar {
+  font-size: .9em;
+  cursor: pointer !important;
+  -webkit-border-radius: 50px !important;
+  font-family:  'Times New Roman';
+  }
+
+.profileWidget{
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
 }
 
 #register_submit_button {
@@ -331,8 +348,20 @@ body, .ui.vertical.divider {
 }
 
 /*Breakpoints are 768px and below for mobile, 768-992px for tablet and 992px+ for computer*/
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 992px) {
   .right_menu {
-    display: collapse;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .right_menu {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .right_menu {
+    width: 10%;
   }
 }

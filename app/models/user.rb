@@ -3,6 +3,7 @@ require 'bcrypt'
 PASSWORD_RESET_EXPIRES = 4
 
 class User < ActiveRecord::Base
+  mount_uploader :avatar, AvatarUploader
 
   attr_accessor :password, :password_confirmation
 
