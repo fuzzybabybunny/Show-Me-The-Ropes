@@ -18,6 +18,9 @@ ShowMeTheRopes::Application.routes.draw do
   get     'pindrop'   => 'application#pindrop'
   get     'register'   => 'application#register'
 
+  # AFTER LOGIN
+  get     'admin'     => 'backend#index'
+
   scope :api do
     get '' => "api#index", as: :api, defaults: {format: :json}
 

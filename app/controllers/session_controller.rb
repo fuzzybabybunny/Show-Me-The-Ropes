@@ -1,14 +1,13 @@
 class SessionController < ApplicationController
 
   # skip_before_action :verify_authenticity_token
-  # layout "site"
 
   def new
     # @messages = flash.inspect
     # @messages = flash.map {| key, value| "#{key.capitalize}: #{value}"}.join(";")
     # render text: "Display the log in form."
     # redirect_to root_url notice: "You are logged in." if current_user
-    render "Test"
+    redirect_to root_url
   end
 
   def create
