@@ -93,6 +93,10 @@ body {
 text-decoration: underline;
 }
 
+.hide {
+display: none;
+}
+
 /*----- PROFILE -----*/
 
 body, .ui.vertical.divider {
@@ -166,13 +170,27 @@ body, .ui.vertical.divider {
   height: 5em !important;
 }
 
+.experience_field{
+  height: 5em;
+  margin-bottom: 15px !important;
+  vertical-align: top !important;
+}
+
 #pic_upload {
   font-size: 1em;
   cursor: pointer;
 }
 
 #register_submit_button {
-  padding-left: 155px;
+  margin-left: 210px;
+}
+
+.register_field{
+  margin-bottom: 15px !important;
+}
+
+#register_label {
+  font-size: 0.875em;
 }
 
 /*----- SPINNER -----*/
