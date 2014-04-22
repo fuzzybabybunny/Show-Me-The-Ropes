@@ -1,26 +1,35 @@
 $( "#addpin" ).on( "click", function() {
+
   console.log("pindrop on");
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    placeMarker(event.latLng);
+  });
+
   function placeMarker(location) {
-  var marker = new google.maps.Marker({
-      position: location,
-      draggable:true,
-      animation: google.maps.Animation.DROP,
-      map: window.map
-  });
-  map.setCenter(location);
-  google.maps.event.addListener(marker, 'dragend', function (event) {
-    var latitude = this.getPosition().lat();
-    var longitude = this.getPosition().lng();
-    console.log("lat: " + latitude);
-    console.log("long: " + longitude);
-  });
-  // var latitude = location.k;
-  // var longitude = location.A;
-  // console.log("lat: " + latitude);
-  // console.log("long: " + longitude);
-  console.log(location);
-  }
-  // google.maps.event.addListener(map, 'click', function(event) {
-  //   placeMarker(event.latLng);
-  // });
+
+    var marker = new google.maps.Marker({
+        position: location,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        map: window.map
+    });
+
+    map.setCenter(location);
+    console.log("location: " + location);
+    console.log("lat: " + location.k);
+    console.log("long: " + location.A);
+    var latitude = location.k;
+    var longitude = location.A;
+
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+      latitude = marker.getPosition().lat();
+      longitude = marker.getPosition().lng();
+      console.log("lat: " + latitude);
+      console.log("long: " + longitude);
+
+    });
+
+  };
+
 });
