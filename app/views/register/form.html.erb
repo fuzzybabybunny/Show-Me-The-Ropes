@@ -1,5 +1,5 @@
 <div class="ui raised segment signin">
-  <%= form_for :user, url: register_url, html: { class: "ui form attached fluid segment"} do |f| %>
+  <%= form_for :user, url: register_url, :html => {:multipart =>true}, html: { class: "ui form attached fluid segment"} do |f| %>
 
 
     <!-- First name, Last Name -->
@@ -23,8 +23,16 @@
 
 
     <!-- Picture upload -->
-    <div class="field">
-      <p id="pic_upload"> <i class="upload icon"></i> Profile picture upload </p>
+    <div class="pic_upload">
+      <p>
+        <%= f.label :upload_image %><br />
+        <%= f.file_field :avatar %><br />
+        <%= f.hidden_field :image_cache %>
+      </p>
+      <p>
+        <%= f.label :remote_image_url, "or image url" %><br />
+        <%= f.text_field :remote_image_url %>
+      </p>
     </div>
 
 
