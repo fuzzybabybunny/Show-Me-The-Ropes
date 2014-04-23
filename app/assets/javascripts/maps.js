@@ -1,14 +1,87 @@
 // INITIALIZE THE MAP
-function getMapData(id, template) {
+function initialize() {
+  var map_canvas = document.getElementById('map_canvas');
+  var myLatlng = new google.maps.LatLng(22.25, 114.1667);
+  var map_options = {
+    center: new google.maps.LatLng(22.25, 114.2),
+    zoom: 12,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    styles: [
+      ]
+   }
+  var map = new google.maps.Map(map_canvas, map_options);
+  window.map = map;
+
+  getAllPins()
+
+}
+
+
+// LISTENING FOR PIN CLICKS
+function iconClick(marker, infowindow){
+    google.maps.event.addListener(marker, 'click', function() {
+      if(!marker.open){
+          infowindow.open(map,marker);
+          marker.open = true;
+      }
+      else{
+          infowindow.close();
+          marker.open = false;
+      }
+      google.maps.event.addListener(map, 'click', function() {
+          infowindow.close();
+          marker.open = false;
+      });
+
+    console.log(marker.position);
+    console.log("Pin ID: " + marker.id);
+    getPinData(marker.id);
+  });
+}
+
+
+
+// DROP DATABASE PINS ON MAP
+function dbMarker(pinLat, pinLong, pinID, pinActivity){
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(pinLat, pinLong),
+    map: map,
+    title: pinActivity,
+    id: pinID
+    });
+  var pinContent = document.getElementById('pinContent');
+  var infowindow = new google.maps.InfoWindow({
+      content: pinContent,
+    });
+
+  // closeInfoWindow = function() {
+  //   infowindow.close();
+  //   };
+  // google.maps.event.addListener(map, 'click', closeInfoWindow);
+  iconClick(marker, infowindow)
+}
+
+
+// RETRIEVE ALL PINS FROM DB
+function getAllPins() {
   $.ajax({
-    url: "/api/users/"+id,
+    url: "/api/pins/",
     type: "GET",
     data: "JSON"
-  }).done(function(data){
-    alert(data["user"]["email"]);
+  }).success(function(data){
+    for (var i = 0; i < data["pins"].length; i++) {
+      var pinID = data["pins"][i]["pin"]["id"];
+      var pinLong = data["pins"][i]["pin"]["long"];
+      var pinLat = data["pins"][i]["pin"]["lat"];
+      var pinActivity = data["pins"][i]["pin"]["activity"];
+
+      dbMarker(pinLat, pinLong, pinID, pinActivity)
+    }
   })
 }
 
+
+// GET DATA FROM PINS
 function getPinData(id, template) {
   $.ajax({
     url: "/api/pins/"+id,
@@ -23,99 +96,14 @@ function getPinData(id, template) {
     var pinGuideFirstName = data["pin"]["guide_first_name"];
     var pinGuideLastName = data["pin"]["guide_last_name"];
     var pinGuideRating = data["pin"]["guide_rating"];
-    // var pinGuideReviews = data["pin"]["guide_textReview"];
 
     $('#firstHeading').html(pinTitle);
     $('#bodyContent').html(pinDescription);
     $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
-    // $('#pinGuideReviews').html(pinGuideReviews);
   })
 }
 
-function initialize() {
-  var map_canvas = document.getElementById('map_canvas');
-  var myLatlng = new google.maps.LatLng(22.25, 114.1667);
-  var myLatlng2 = new google.maps.LatLng(22.256, 114.3);
-  var map_options = {
-    center: myLatlng,
-    zoom: 12,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    styles: [
-        // {
-        //   stylers: [
-        //     { hue: "#00ffe6" },
-        //     { saturation: -20 }
-        //   ]
-        // },{
-        //   featureType: "road",
-        //   elementType: "geometry",
-        //   stylers: [
-        //     { lightness: 100 },
-        //     { visibility: "simplified" }
-        //   ]
-        // },{
-        //   featureType: "road",
-        //   elementType: "labels",
-        //   stylers: [
-        //     { visibility: "off" }
-        //   ]
-        // }
-      ]
-   }
-  var map = new google.maps.Map(map_canvas, map_options);
-  window.map = map;
 
-// PRE-SET MARKERS
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    map: map,
-    title:"This is marker 1!",
-    id: 1
-  });
-  var marker2 = new google.maps.Marker({
-    position: myLatlng2,
-    draggable:true,
-    map: map,
-    title:"This is a draggable marker!",
-    id: 2
-  });
-
-
-// CONTENT OF THE MARKERS
-
-  var pinContent = document.getElementById('pinContent');
-
-  var infowindow = new google.maps.InfoWindow({
-      content: pinContent,
-    });
-// ADDING MARKERS
-
-  // function placeMarker(location) {
-  // var marker = new google.maps.Marker({
-  //     position: location,
-  //     map: map
-  // });
-
-  // map.setCenter(location);
-  // console.log(location);
-  // }
-
-  // google.maps.event.addListener(map, 'click', function(event) {
-  //   placeMarker(event.latLng);
-  // });
-
-
-// LISTENING FOR ICON CLICKS
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-    console.log(marker.position);
-    console.log("Pin ID: " + marker.id);
-    getPinData(marker.id);
-  });
-
-}
-
-// CREATING THE MAP
+// CREATE THE MAP
 google.maps.event.addDomListener(window, 'load', initialize);
-
