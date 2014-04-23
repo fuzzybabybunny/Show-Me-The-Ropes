@@ -1,24 +1,24 @@
 <div class="ui raised segment signin">
   <div class="cmborder">
-    <%= form_for :message, url: message_url, html: {class: "ui form attached fluid segment"} do |f| %>
+    <%= form_tag("/message", method: "post") do %>
       <!-- <p>Go ahead and message your guide</p> -->
       <div class="two fields">
         <div class="field">
           <label>First Name</label>
-          <%= f.text_field :firstName, class: "ui input", placeholder: "First Name" %>
+          <%= text_field_tag 'firstName', nil, class: "ui input", placeholder: "First Name" %>
         </div>
         <div class="field">
           <label>Last Name</label>
-          <%= f.text_field :lastName, class: "ui input", placeholder: "Last Name" %>
+          <%= text_field_tag 'lastName', nil, class: "ui input", placeholder: "Last Name" %>
         </div>
       </div>
       <div class="field">
         <label>Message title</label>
-        <%= f.text_field :messageTitle, class: "ui input", placeholder: "Message Title" %>
+        <%= text_field_tag 'messageTitle', nil, class: "ui input", placeholder: "Message Title" %>
       </div>
       <div class="field">
         <label>Message</label>
-        <%= f.text_area :messageBody, class: "ui input", placeholder: "Message Body" %>
+        <%= text_area_tag 'messageBody', nil, class: "ui input", placeholder: "Message Body" %>
       </div>
       <div class="inline field">
         <div class="ui checkbox">
@@ -26,7 +26,7 @@
           <label for="terms">I agree to the terms and conditions</label> -->
         </div>
       </div>
-      <%= f.submit "Submit", class: "ui blue submit button" %>
+      <%= submit_tag "Submit", class: "ui blue submit button" %>
 
     <% end %>
   <span class='close_message' id="messageclose">&times;</span>

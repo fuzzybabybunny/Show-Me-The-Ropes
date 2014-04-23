@@ -47,7 +47,6 @@ gem 'rabl'
 gem 'oj'
 gem 'carrierwave'
 
-
 group :development, :test do
 
   gem "pry"

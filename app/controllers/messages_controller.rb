@@ -5,9 +5,11 @@ class MessagesController < ApplicationController
   helper_method :current_user
 
   def index
+    @message = Message.new
   end
 
   def create
+    # @user = User.find_by_id(params[:id])
+    MessageMailer.welcome_email().deliver
   end
-
 end
