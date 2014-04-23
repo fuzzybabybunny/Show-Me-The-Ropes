@@ -62,36 +62,17 @@ to allow ajax to grab it -->
 </div>
 
 <div id="newPinForm" class="">
-Current User: <%= @current_user.first_name %>
   <div class="">
     <div class="">
     <%= form_for :pin, html: {class: "ui form attached fluid segment"}, url: pins_url do |f| %>
       <div class="field">
         <label>Pin title</label>
-        <%= f.text_field :title %>
-      </div>
-      <div class="field">
-        <label>Activity</label>
         <%= f.text_field :activity %>
       </div>
       <div class="field">
         <label>Pin description</label>
         <%= f.text_area :description %>
       </div>
-      <div class="field">
-        <label>lat</label>
-        <%= f.hidden_field :lat %>
-      </div>
-      <div class="field">
-        <label>long</label>
-        <%= f.hidden_field :long %>
-      </div>
-      <div class="field">
-        <label>guide_id</label>
-        <%= f.hidden_field :guide_id, value: @current_user.id %>
-
-      </div>
-
       <div class="inline field">
         <div class="ui checkbox">
           <input type="checkbox" id="terms">
