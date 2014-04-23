@@ -20,25 +20,59 @@ function initialize() {
     id: 1
   });
 
-  // GET ALL PINS FROM DB
-  getAllPins()
-
-
   // CONTENT OF THE MARKERS
   var pinContent = document.getElementById('pinContent');
   var infowindow = new google.maps.InfoWindow({
       content: pinContent,
     });
 
+  // GET ALL PINS FROM DB AND LISTEN FOR CLICKS
+  getAllPins()
+  iconClick(marker, infowindow)
+}
 
-  // LISTENING FOR ICON CLICKS
-  google.maps.event.addListener(marker, 'click', function() {
+// LISTENING FOR ICON CLICKS
+function iconClick(marker, infowindow){
+    google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
     console.log(marker.position);
     console.log("Pin ID: " + marker.id);
     getPinData(marker.id);
-  });
+    });
+  }
 
+// DROP DATABASE PINS
+function dbMarker(pinLat, pinLong, pinID){
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(pinLat, pinLong),
+    map: map,
+    title: "Database pins",
+    id: pinID
+    });
+  var pinContent = document.getElementById('pinContent');
+  var infowindow = new google.maps.InfoWindow({
+      content: pinContent,
+    });
+  iconClick(marker, infowindow)
+}
+
+function getAllPins() {
+  $.ajax({
+    url: "/api/pins/",
+    type: "GET",
+    data: "JSON"
+  }).success(function(data){
+    for (var i = 0; i < data["pins"].length; i++) {
+      var pinID = data["pins"][i]["pin"]["id"];
+      var pinLong = data["pins"][i]["pin"]["long"];
+      var pinLat = data["pins"][i]["pin"]["lat"];
+      console.log(pinID);
+      console.log(pinLat);
+      console.log(pinLong);
+
+      dbMarker(pinLat, pinLong, pinID)
+    }
+  })
 }
 
 
@@ -74,35 +108,6 @@ function getPinData(id, template) {
     $('#pinGuideRating').html(pinGuideRating);
   })
 }
-
-// DROP DATABASE PINS
-function dbMarker(pinLat, pinLong, pinID){
-  var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(pinLat, pinLong),
-      map: map,
-      title: "Database pins",
-      id: pinID
-      });
-  }
-
-  function getAllPins() {
-    $.ajax({
-      url: "/api/pins/",
-      type: "GET",
-      data: "JSON"
-    }).success(function(data){
-      for (var i = 0; i < data["pins"].length; i++) {
-        var pinID = data["pins"][i]["pin"]["id"];
-        var pinLong = data["pins"][i]["pin"]["long"];
-        var pinLat = data["pins"][i]["pin"]["lat"];
-        console.log(pinTitle);
-        console.log(pinLat);
-        console.log(pinLong);
-
-        dbMarker(pinLat, pinLong, pinID)
-      }
-    })
-  }
 
 
 // CREATE THE MAP
