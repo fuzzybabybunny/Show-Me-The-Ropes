@@ -1,12 +1,11 @@
 $( "#addpin" ).on( "click", function() {
   console.log("pindrop on");
 
-  google.maps.event.addListener(map, 'click', function(event) {
-    // setTimeout(function(){
-    // $ ( "#newPinForm" ).removeClass("hide");
-    // },2000);
-    placeMarker(event.latLng);
-  });
+
+  // function newWindow () {
+  //   alert("test");
+  //   return function() { console.log("something");}
+  // }
 
   function placeMarker(location) {
 
@@ -38,10 +37,20 @@ $( "#addpin" ).on( "click", function() {
       content: contentString
     });
 
-    google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'click', function(event) {
       newPinInfoWindow.open(map,marker);
+      // x = newWindow()
+      // console.log(this)
     });
 
   };
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    // setTimeout(function(){
+    // $ ( "#newPinForm" ).removeClass("hide");
+    // },2000);
+    placeMarker(event.latLng);
+    newPinInfoWindow.open(map,marker);
+  });
 
 });
