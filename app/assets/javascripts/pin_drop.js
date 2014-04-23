@@ -23,22 +23,29 @@ $( "#addpin" ).on( "click", function() {
     var latitude = location.k;
     var longitude = location.A;
 
+    $("#newPinForm input#pin_long").val(longitude);
+    $("#newPinForm input#pin_lat").val(latitude);
+
+
     google.maps.event.addListener(marker, 'dragend', function (event) {
       latitude = marker.getPosition().lat();
       longitude = marker.getPosition().lng();
-      console.log("lat: " + latitude);
-      console.log("long: " + longitude);
+      console.log("lat dragged: " + latitude);
+      console.log("long dragged: " + longitude);
+
 
     });
 
+
     var contentString = document.getElementById('newPinForm');
+
 
     var newPinInfoWindow = new google.maps.InfoWindow({
       content: contentString
     });
 
     google.maps.event.addListener(marker, 'click', function(event) {
-      newPinInfoWindow.open(map,marker);
+      newPinInfoWindow.open(map,marker);s
       // x = newWindow()
       // console.log(this)
     });

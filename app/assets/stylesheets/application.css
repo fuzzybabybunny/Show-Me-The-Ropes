@@ -109,6 +109,11 @@ text-decoration: underline;
 display: none;
 }
 
+.co-ord {
+  width: 500px;
+  height: 10px;
+}
+
 #pin_submit{
   margin-bottom: -1em !important;
   margin-right: -1.3em !important;
