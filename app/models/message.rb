@@ -1,6 +1,7 @@
 class Message
-  # attribute :firstName,
-  # attribute :lastName,
-  # attribute :messageTitle,
-  # attribute :messageBody,
+
+  def index
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
 end

@@ -5,26 +5,23 @@
       <div class="two fields">
         <div class="field">
           <label>First Name</label>
-          <%= text_field_tag 'firstName', nil, class: "ui input", placeholder: "First Name" %>
+          <%= text_field_tag 'message[firstName]', @current_user.first_name, class: "ui input", placeholder: "First Name" %>
         </div>
         <div class="field">
           <label>Last Name</label>
-          <%= text_field_tag 'lastName', nil, class: "ui input", placeholder: "Last Name" %>
+          <%= text_field_tag 'message[lastName]', @current_user.last_name, class: "ui input", placeholder: "Last Name" %>
         </div>
       </div>
       <div class="field">
         <label>Message title</label>
-        <%= text_field_tag 'messageTitle', nil, class: "ui input", placeholder: "Message Title" %>
+        <%= text_field_tag 'message[messageTitle]', nil, class: "ui input", placeholder: "Message Title" %>
       </div>
       <div class="field">
         <label>Message</label>
-        <%= text_area_tag 'messageBody', nil, class: "ui input", placeholder: "Message Body" %>
+        <%= text_area_tag 'message[messageBody]', nil, class: "ui input", placeholder: "Message Body" %>
       </div>
       <div class="inline field">
-        <div class="ui checkbox">
-          <!-- <input type="checkbox" id="terms">
-          <label for="terms">I agree to the terms and conditions</label> -->
-        </div>
+        <%= hidden_field_tag 'message[currentUserEmail]', @current_user.email %>
       </div>
       <%= submit_tag "Submit", class: "ui blue submit button" %>
 
