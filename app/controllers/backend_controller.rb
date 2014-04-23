@@ -6,4 +6,8 @@ class BackendController < ApplicationController
   def index
   end
 
+  def message
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
 end
