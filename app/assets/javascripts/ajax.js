@@ -14,20 +14,6 @@ $(document).ready(function() {
       });
     });
 
-  $( "#messagePinGuide" ).on("click", function() {
-    $.ajax('/message.html', {
-      success: function(response) {
-        $('.popin').html(response).fadeIn();
-        },
-      beforeSend: function() {
-        $('.popin').addClass('loading');
-        },
-      complete: function() {
-        $('.popin').removeClass('loading');
-        }
-      });
-    });
-
   $( "#register" ).on("click", function() {
     $.ajax('/register.html', {
       success: function(response) {

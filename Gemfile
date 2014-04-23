@@ -47,6 +47,8 @@ gem 'rabl'
 gem 'oj'
 gem 'carrierwave'
 
+gem 'handlebars_assets'
+
 group :development, :test do
 
   gem "pry"

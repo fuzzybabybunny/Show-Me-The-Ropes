@@ -1,5 +1,4 @@
-<div id="message-placeholder"></div>
-<div class="ui raised segment signin">
+<div id="messagePinGuideForm" class="ui raised segment signin">
   <div class="cmborder">
 
     <%= form_tag("/message", method: "post") do %>
@@ -24,6 +23,21 @@
       </div>
       <div class="inline field">
         <%= hidden_field_tag 'message[currentUserEmail]', @current_user.email %>
+      </div>
+      <div class="inline field">
+        <%= hidden_field_tag 'message[guideFirstName]', {{guideFirstName}} %>
+      </div>
+      <div class="inline field">
+        <%= hidden_field_tag 'message[guideLastName]', {{guideLastName}} %>
+      </div>
+      <div class="inline field">
+        <%= hidden_field_tag 'message[guideEmail]', {{guideEmail}} %>
+      </div>
+      <div class="inline field">
+        <%= hidden_field_tag 'message[pinActivity]', {{pinActivity}} %>
+      </div>
+      <div class="inline field">
+        <%= hidden_field_tag 'message[pinDescription]', {{pinDescription}} %>
       </div>
       <%= submit_tag "Submit", class: "ui blue submit button" %>
 

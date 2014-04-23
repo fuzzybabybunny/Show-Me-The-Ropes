@@ -1,5 +1,4 @@
 // INITIALIZE THE MAP
-
 function initialize() {
   var map_canvas = document.getElementById('map_canvas');
   var myLatlng = new google.maps.LatLng(22.25, 114.1667);
@@ -97,12 +96,48 @@ function getPinData(id, template) {
     var pinGuideFirstName = data["pin"]["guide_first_name"];
     var pinGuideLastName = data["pin"]["guide_last_name"];
     var pinGuideRating = data["pin"]["guide_rating"];
+    var pinGuideEmail = data["pin"]["guide_email"];
 
     $('#firstHeading').html(pinTitle);
     $('#bodyContent').html(pinDescription);
     $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
-  })
+
+    messageTemplate = HandlebarsTemplates['messages/index'](data);
+
+    var messageSource = document.getElementById( 'messagePinGuideForm' ).innerHTML;
+
+    var messageTemplate = Handlebars.compile( messageSource );
+
+    var guideData = {
+      guideFirstName : pinGuideFirstName,
+      guideLastName : pinGuideLastName,
+      guideEmail : pinGuideEmail,
+      pinActivity : pinTitle,
+      pinDescription2 : pinDescription
+    };
+
+    document.getElementById( 'message-placeholder' ).innerHTML = messageTemplate( guideData );
+
+    console.log("Guide Data: " + guideData);
+
+    $( "#messagePinGuide" ).on("click", function() {
+      $.ajax({
+        url: "/message.html",
+        type: "GET",
+        data: "JSON",
+        success: function(response) {
+          $('.popin').html(response).fadeIn();
+          },
+        beforeSend: function() {
+          $('.popin').addClass('loading');
+          },
+        complete: function() {
+          $('.popin').removeClass('loading');
+          }
+        });
+      });
+    })
 }
 
 
