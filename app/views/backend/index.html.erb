@@ -16,7 +16,7 @@
     <%= link_to( "Log Out", logout_url, method: :delete) %>
   </div>
   <div id="right_menu" class="item right menu">
-    You are logged in!
+    <%= "Welcome, #{@current_user.email}" %>
   </div>
 </div>
 
