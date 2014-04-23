@@ -33,13 +33,30 @@ function getPinData(id, template) {
   })
 }
 
+function getAllPins() {
+  $.ajax({
+    url: "/api/pins/",
+    type: "GET",
+    data: "JSON"
+  }).success(function(data){
+    for (var i = 0; i < data["pins"].length; i++) {
+    var pinTitle = data["pins"][i]["pin"]["id"];
+    var pinLong = data["pins"][i]["pin"]["long"];
+    var pinLat = data["pins"][i]["pin"]["lat"];
+    console.log(pinTitle);
+    console.log(pinLat);
+    console.log(pinLong);
+    }
+  })
+}
+getAllPins()
+
 function initialize() {
   var map_canvas = document.getElementById('map_canvas');
   var myLatlng = new google.maps.LatLng(22.25, 114.1667);
-  var myLatlng2 = new google.maps.LatLng(22.256, 114.3);
   var map_options = {
-    center: myLatlng,
-    zoom: 12,
+    center: new google.maps.LatLng(26.11, -2.46),
+    zoom: 3,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: [
         // {
@@ -72,13 +89,6 @@ function initialize() {
     map: map,
     title:"This is marker 1!",
     id: 1
-  });
-  var marker2 = new google.maps.Marker({
-    position: myLatlng2,
-    draggable:true,
-    map: map,
-    title:"This is a draggable marker!",
-    id: 2
   });
 
 

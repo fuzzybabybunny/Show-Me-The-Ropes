@@ -50,7 +50,6 @@ $( "#addpin" ).on( "click", function() {
     // $ ( "#newPinForm" ).removeClass("hide");
     // },2000);
     placeMarker(event.latLng);
-    newPinInfoWindow.open(map,marker);
   });
 
 });
