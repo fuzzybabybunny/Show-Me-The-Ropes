@@ -11,9 +11,6 @@ class ApplicationController < ActionController::Base
   def profile
   end
 
-  def message
-  end
-
   def pindrop
   end
 

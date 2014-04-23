@@ -26,3 +26,7 @@ end
 node :guide_avatar do |pin|
   pin.guide.user.avatar
 end
+
+node :guide_email do |pin|
+  pin.guide.user.email
+end

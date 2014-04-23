@@ -23,12 +23,14 @@ function getPinData(id, template) {
     var pinGuideFirstName = data["pin"]["guide_first_name"];
     var pinGuideLastName = data["pin"]["guide_last_name"];
     var pinGuideRating = data["pin"]["guide_rating"];
+    var pinGuideEmail = data["pin"]["guide_email"];
     // var pinGuideReviews = data["pin"]["guide_textReview"];
 
     $('#firstHeading').html(pinTitle);
     $('#bodyContent').html(pinDescription);
     $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
+    $('#pinGuideEmail').html('<a href="mailto:' + pinGuideEmail + '">Email Guide</a>');
     // $('#pinGuideReviews').html(pinGuideReviews);
   })
 }

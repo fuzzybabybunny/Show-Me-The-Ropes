@@ -14,8 +14,11 @@ ShowMeTheRopes::Application.routes.draw do
   patch   'reset/:code' => 'password#update'
 
   get     'profile'   => 'application#profile'
-  get     'message'   => 'application#message'
   get     'pindrop'   => 'application#pindrop'
+
+  # MESSAGING
+  get     'message'   => 'messages#index'
+  post    'message'   => 'messages#create'
 
   # REGISTRATION
   get     'register'   => 'register#form'
