@@ -27,7 +27,7 @@ body {
   margin-top: -43px;
 }
 
-#dropdown_menu {
+#dropdown_menu, .ui.simple.dropdown.item, .item.right.menu {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
 }
 
@@ -86,6 +86,11 @@ body {
 #newPinForm {
   width: 500px;
   height: 300px;
+}
+
+#messagePinGuide {
+  margin: 70px 0 0 310px;
+  position: absolute;
 }
 
 .ui.segment.attached{
