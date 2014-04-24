@@ -4,12 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Message from <%= @firstName %> <%= @lastName %></h1>
+    <h1>Message from <%= @firstName %> <%= @lastName %> about <%= @pinActivity %>:</h1>
     <p>
       <%= @messageBody %>
     </p>
     <p>
-      This user's email is <%= @currentUserEmail %>
+      <%= @firstName %> <%= @lastName %>'s email is <%= @userEmail %>
     </p>
   </body>
 </html>

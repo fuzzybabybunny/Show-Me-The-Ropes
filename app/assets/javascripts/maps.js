@@ -131,27 +131,32 @@ function getPinData(id, template) {
 
       var messageSource = $('#messagePinGuideForm').html();
 
-      var html = HandlebarsTemplates['messages/index'](messageData);
-      console.log(html);
+      var messageHTML = HandlebarsTemplates['messages/index'](messageData);
+
+      $( "#messagePinGuideButton" ).on("click", function() {
+        $('.popin').html(messageHTML).fadeIn();
+      });
+
+      console.log(messageHTML);
 
       // When the Contact Guide button is pressed
 
-      $( "#messagePinGuideButton" ).on("click", function() {
-        $.ajax({
-          url: "/message.html",
-          type: "GET",
-          data: html
-          success: function(response) {
-            $('.popin').html(response).fadeIn();
-          },
-          beforeSend: function() {
-            $('.popin').addClass('loading');
-          },
-          complete: function() {
-            $('.popin').removeClass('loading');
-          }
-        });
-      });
+      // $( "#messagePinGuideButton" ).on("click", function() {
+      //   $.ajax({
+      //     url: "/message.html",
+      //     type: "GET",
+      //     data: html
+      //     success: function(response) {
+      //       $('.popin').html(response).fadeIn();
+      //     },
+      //     beforeSend: function() {
+      //       $('.popin').addClass('loading');
+      //     },
+      //     complete: function() {
+      //       $('.popin').removeClass('loading');
+      //     }
+      //   });
+      // });
 
     });
   });

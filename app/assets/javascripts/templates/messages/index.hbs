@@ -1,7 +1,7 @@
 <div id="messagePinGuideForm" class="ui raised segment signin">
   <div class="cmborder">
-
-    <form action="/message" method="post">
+    <h1>Send a message to {{guideFirstName}} {{guideLastName}} about {{pinActivity}}!</h1>
+    <form action="/message" method="post" class="ui form attached fluid segment">
       <!-- <p>Go ahead and message your guide</p> -->
       <div class="two fields">
         <div class="field">
@@ -22,6 +22,9 @@
         <input type="textarea" name="message[messageBody]" class="ui input" value="" placeholder="Message Body">
       </div>
       <div class="inline field">
+        <input type="hidden" name="message[userEmail]" value="{{userEmail}}">
+      </div>
+      <div class="inline field">
         <input type="hidden" name="message[guideFirstName]" value="{{guideFirstName}}">
       </div>
       <div class="inline field">
@@ -36,8 +39,7 @@
       <div class="inline field">
         <input type="hidden" name="message[pinDescription]" value="{{pinDescription2}}">
       </div>
-      <%= submit_tag "Submit", class: "ui blue submit button" %>
-
+      <input type="submit" value="Send" class="ui blue submit button">
     </form>
   <span class='close_message' id="messageclose">&times;</span>
   </div>
