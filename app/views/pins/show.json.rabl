@@ -30,3 +30,7 @@ end
 node :guide_email do |pin|
   pin.guide.user.email
 end
+
+node :guide_experience do |pin|
+  pin.guide.guide_experience
+end

@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
-  $( "#pinGuideName" ).on("click", function() {
-    $.ajax('/profile.html', {
-      success: function(response) {
-        $('.popin').html(response).fadeIn();
-        },
-      beforeSend: function() {
-        $('.popin').addClass('loading');
-        },
-      complete: function() {
-        $('.popin').removeClass('loading');
-        }
-      });
-    });
+  // $( "#pinGuideName" ).on("click", function() {
+  //   $.ajax('/profile.html', {
+  //     success: function(response) {
+  //       $('.popin').html(response).fadeIn();
+  //       },
+  //     beforeSend: function() {
+  //       $('.popin').addClass('loading');
+  //       },
+  //     complete: function() {
+  //       $('.popin').removeClass('loading');
+  //       }
+  //     });
+  //   });
 
   $( "#register" ).on("click", function() {
     $.ajax('/register.html', {
@@ -42,19 +42,19 @@ $(document).ready(function() {
   //     });
   //   });
 
-  // $( "#pinGuideName" ).on("click", function() {
-  //   $.ajax({
-  //     url: "/api/pins/"+id,
-  //     type: "GET",
-  //     data: "JSON"
-  //   }).success(function(response) {
-  //     $('.popin').html(response).fadeIn();
-  //   }).beforeSend(function() {
-  //     $('.popin').addClass('loading');
-  //   }).complete(function() {
-  //       $('.popin').removeClass('loading');
-  //   });
-  // });
+  $( "#pinGuideName" ).on("click", function() {
+    $.ajax({
+      url: "/api/pins/" & 'guide_id',
+      type: "GET",
+      data: "JSON"
+    }).success(function(response) {
+      $('.popin').html(response).fadeIn();
+    }).beforeSend(function() {
+      $('.popin').addClass('loading');
+    }).complete(function() {
+        $('.popin').removeClass('loading');
+    });
+  });
 
   $( ".close_profile" ).on("click", function() {
     $.get('/profile.html', function(response) {
