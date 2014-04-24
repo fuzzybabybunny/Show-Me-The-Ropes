@@ -83,11 +83,13 @@ function getAllPins() {
 
 // GET DATA FROM PINS
 function getPinData(id, template) {
+  // First AJAX call to get the data from the pin that is clicked.
   $.ajax({
     url: "/api/pins/"+id,
     type: "GET",
     data: "JSON"
   }).success(function(data){
+
     console.log("Here is all the pin data: " + data);
     var pinTitle = data["pin"]["activity"];
     var pinDescription = data["pin"]["description"];
@@ -103,42 +105,57 @@ function getPinData(id, template) {
     $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
 
-    messageTemplate = HandlebarsTemplates['messages/index'](data);
+    $.ajax({
+      url: "/api/current_user",
+      type: "GET",
+      data: "JSON"
+    }).success(function(data){
+      console.log("Here is all the current user data: " + data);
+      var currentUserEmail = data["user"]["email"];
+      var currentUserFirstName = data["user"]["first_name"];
+      var currentUserLastName = data["user"]["last_name"];
 
-    var messageSource = document.getElementById( 'messagePinGuideForm' ).innerHTML;
+      var messageData = {
+        guideFirstName : pinGuideFirstName,
+        guideLastName : pinGuideLastName,
+        guideEmail : pinGuideEmail,
+        pinActivity : pinTitle,
+        pinDescription2 : pinDescription,
+        userEmail : currentUserEmail,
+        userFirstName : currentUserFirstName,
+        userLastName : currentUserLastName
+      };
 
-    var messageTemplate = Handlebars.compile( messageSource );
+      console.log("Guide and Current User Data: ");
+      console.log(messageData);
 
-    var guideData = {
-      guideFirstName : pinGuideFirstName,
-      guideLastName : pinGuideLastName,
-      guideEmail : pinGuideEmail,
-      pinActivity : pinTitle,
-      pinDescription2 : pinDescription
-    };
+      var messageSource = $('#messagePinGuideForm').html();
 
-    document.getElementById( 'message-placeholder' ).innerHTML = messageTemplate( guideData );
+      var html = HandlebarsTemplates['messages/index'](messageData);
+      console.log(html);
 
-    console.log("Guide Data: " + guideData);
+      // When the Contact Guide button is pressed
 
-    $( "#messagePinGuide" ).on("click", function() {
-      $.ajax({
-        url: "/message.html",
-        type: "GET",
-        data: "JSON",
-        success: function(response) {
-          $('.popin').html(response).fadeIn();
+      $( "#messagePinGuideButton" ).on("click", function() {
+        $.ajax({
+          url: "/message.html",
+          type: "GET",
+          data: html
+          success: function(response) {
+            $('.popin').html(response).fadeIn();
           },
-        beforeSend: function() {
-          $('.popin').addClass('loading');
+          beforeSend: function() {
+            $('.popin').addClass('loading');
           },
-        complete: function() {
-          $('.popin').removeClass('loading');
+          complete: function() {
+            $('.popin').removeClass('loading');
           }
         });
       });
-    })
-}
+
+    });
+  });
+};
 
 
 // CREATE THE MAP

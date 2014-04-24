@@ -7,7 +7,7 @@ node :linked do
     rookies: rookies_url,
     pins: pins_url,
     rookie_messages: rookie_messages_url,
-    guide_messages: guide_messages_url
-
+    guide_messages: guide_messages_url,
+    current_user: current_user_url
   }
 end

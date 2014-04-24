@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
   def create
     @users = User.new(user_params)
 

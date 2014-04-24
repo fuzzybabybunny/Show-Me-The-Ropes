@@ -31,6 +31,7 @@ ShowMeTheRopes::Application.routes.draw do
     get '' => "api#index", as: :api
 
     resources :users
+    get "current_user" => 'users#current_user'
 
     resources :guides
 

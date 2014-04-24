@@ -1,47 +1,44 @@
 <div id="messagePinGuideForm" class="ui raised segment signin">
   <div class="cmborder">
 
-    <%= form_tag("/message", method: "post") do %>
+    <form action="/message" method="post">
       <!-- <p>Go ahead and message your guide</p> -->
       <div class="two fields">
         <div class="field">
           <label>First Name</label>
-          <%= text_field_tag 'message[firstName]', @current_user.first_name, class: "ui input", placeholder: "First Name" %>
+          <input type="text" name="message[firstName]" class="ui input" value="{{userFirstName}}">
         </div>
         <div class="field">
           <label>Last Name</label>
-          <%= text_field_tag 'message[lastName]', @current_user.last_name, class: "ui input", placeholder: "Last Name" %>
+          <input type="text" name="message[lastName]" class="ui input" value="{{userLastName}}">
         </div>
       </div>
       <div class="field">
-        <label>Message title</label>
-        <%= text_field_tag 'message[messageTitle]', nil, class: "ui input", placeholder: "Message Title" %>
+        <label>Message Title</label>
+        <input type="text" name="message[messageTitle]" class="ui input" value="" placeholder="Message Title">
       </div>
       <div class="field">
-        <label>Message</label>
-        <%= text_area_tag 'message[messageBody]', nil, class: "ui input", placeholder: "Message Body" %>
+        <label>Message Body</label>
+        <input type="textarea" name="message[messageBody]" class="ui input" value="" placeholder="Message Body">
       </div>
       <div class="inline field">
-        <%= hidden_field_tag 'message[currentUserEmail]', @current_user.email %>
+        <input type="hidden" name="message[guideFirstName]" value="{{guideFirstName}}">
       </div>
       <div class="inline field">
-        <%= hidden_field_tag 'message[guideFirstName]', {{guideFirstName}} %>
+        <input type="hidden" name="message[guideLastName]" value="{{guideLastName}}">
       </div>
       <div class="inline field">
-        <%= hidden_field_tag 'message[guideLastName]', {{guideLastName}} %>
+        <input type="hidden" name="message[guideEmail]" value="{{guideEmail}}">
       </div>
       <div class="inline field">
-        <%= hidden_field_tag 'message[guideEmail]', {{guideEmail}} %>
+        <input type="hidden" name="message[pinActivity]" value="{{pinActivity}}">
       </div>
       <div class="inline field">
-        <%= hidden_field_tag 'message[pinActivity]', {{pinActivity}} %>
-      </div>
-      <div class="inline field">
-        <%= hidden_field_tag 'message[pinDescription]', {{pinDescription}} %>
+        <input type="hidden" name="message[pinDescription]" value="{{pinDescription2}}">
       </div>
       <%= submit_tag "Submit", class: "ui blue submit button" %>
 
-    <% end %>
+    </form>
   <span class='close_message' id="messageclose">&times;</span>
   </div>
 </div>
