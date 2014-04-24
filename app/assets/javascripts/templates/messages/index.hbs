@@ -1,45 +1,46 @@
 <div id="messagePinGuideForm" class="ui raised segment signin">
   <div class="cmborder">
     <h1>Send a message to {{guideFirstName}} {{guideLastName}} about {{pinActivity}}!</h1>
-    <form action="/message" method="post" class="ui form attached fluid segment">
-      <!-- <p>Go ahead and message your guide</p> -->
-      <div class="two fields">
-        <div class="field">
-          <label>First Name</label>
-          <input type="text" name="message[firstName]" class="ui input" value="{{userFirstName}}">
+    <form action="/message" method="post">
+      <div class="ui form attached fluid segment">
+        <div class="two fields">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" name="message[firstName]" class="ui input" value="{{userFirstName}}">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" name="message[lastName]" class="ui input" value="{{userLastName}}">
+          </div>
         </div>
         <div class="field">
-          <label>Last Name</label>
-          <input type="text" name="message[lastName]" class="ui input" value="{{userLastName}}">
+          <label>Message Title</label>
+          <input type="text" name="message[messageTitle]" class="ui input" value="" placeholder="Message Title">
         </div>
+        <div class="field">
+          <label>Message Body</label>
+          <textarea name="message[messageBody]" class="ui input" placeholder="Message Body"></textarea>
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="message[userEmail]" value="{{userEmail}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="message[guideFirstName]" value="{{guideFirstName}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="message[guideLastName]" value="{{guideLastName}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="message[guideEmail]" value="{{guideEmail}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="message[pinActivity]" value="{{pinActivity}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="message[pinDescription]" value="{{pinDescription2}}">
+        </div>
+        <input type="submit" value="Send" class="ui blue submit button">
       </div>
-      <div class="field">
-        <label>Message Title</label>
-        <input type="text" name="message[messageTitle]" class="ui input" value="" placeholder="Message Title">
-      </div>
-      <div class="field">
-        <label>Message Body</label>
-        <input type="textarea" name="message[messageBody]" class="ui input" value="" placeholder="Message Body">
-      </div>
-      <div class="inline field">
-        <input type="hidden" name="message[userEmail]" value="{{userEmail}}">
-      </div>
-      <div class="inline field">
-        <input type="hidden" name="message[guideFirstName]" value="{{guideFirstName}}">
-      </div>
-      <div class="inline field">
-        <input type="hidden" name="message[guideLastName]" value="{{guideLastName}}">
-      </div>
-      <div class="inline field">
-        <input type="hidden" name="message[guideEmail]" value="{{guideEmail}}">
-      </div>
-      <div class="inline field">
-        <input type="hidden" name="message[pinActivity]" value="{{pinActivity}}">
-      </div>
-      <div class="inline field">
-        <input type="hidden" name="message[pinDescription]" value="{{pinDescription2}}">
-      </div>
-      <input type="submit" value="Send" class="ui blue submit button">
     </form>
   <span class='close_message' id="messageclose">&times;</span>
   </div>
