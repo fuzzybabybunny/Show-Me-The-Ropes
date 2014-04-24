@@ -10,8 +10,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # @user = User.find_by_id(params[:id])
-
     MessageMailer.message_guide(message_params).deliver
   end
 

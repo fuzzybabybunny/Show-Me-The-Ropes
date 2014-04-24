@@ -81,8 +81,10 @@ function getAllPins() {
 }
 
 
-// GET DATA FROM PINS
+// GET DATA FROM PINS, GET DATA FROM CURRENT USER,
+// CONTACT FORM TO MESSAGE GUIDE
 function getPinData(id, template) {
+
   // First AJAX call to get the data from the pin that is clicked.
   $.ajax({
     url: "/api/pins/"+id,
@@ -90,7 +92,6 @@ function getPinData(id, template) {
     data: "JSON"
   }).success(function(data){
 
-    console.log("Here is all the pin data: " + data);
     var pinTitle = data["pin"]["activity"];
     var pinDescription = data["pin"]["description"];
     var pinLong = data["pin"]["long"];
@@ -105,12 +106,14 @@ function getPinData(id, template) {
     $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
 
+    // Second AJAX call nested inside the first one to get the data
+    // of the current logged in user.
     $.ajax({
       url: "/api/current_user",
       type: "GET",
       data: "JSON"
     }).success(function(data){
-      console.log("Here is all the current user data: " + data);
+
       var currentUserEmail = data["user"]["email"];
       var currentUserFirstName = data["user"]["first_name"];
       var currentUserLastName = data["user"]["last_name"];
@@ -126,9 +129,6 @@ function getPinData(id, template) {
         userLastName : currentUserLastName
       };
 
-      console.log("Guide and Current User Data: ");
-      console.log(messageData);
-
       var messageSource = $('#messagePinGuideForm').html();
 
       var messageHTML = HandlebarsTemplates['messages/index'](messageData);
@@ -136,28 +136,6 @@ function getPinData(id, template) {
       $( "#messagePinGuideButton" ).on("click", function() {
         $('.popin').html(messageHTML).fadeIn();
       });
-
-      console.log(messageHTML);
-
-      // When the Contact Guide button is pressed
-
-      // $( "#messagePinGuideButton" ).on("click", function() {
-      //   $.ajax({
-      //     url: "/message.html",
-      //     type: "GET",
-      //     data: html
-      //     success: function(response) {
-      //       $('.popin').html(response).fadeIn();
-      //     },
-      //     beforeSend: function() {
-      //       $('.popin').addClass('loading');
-      //     },
-      //     complete: function() {
-      //       $('.popin').removeClass('loading');
-      //     }
-      //   });
-      // });
-
     });
   });
 };
