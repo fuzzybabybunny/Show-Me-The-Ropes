@@ -15,24 +15,21 @@ u1 = User.create({
     password: temp_password,
     password_confirmation: temp_password,
     first_name: "Victor",
-    last_name: "Lin",
-    avatar: "victor.jpg"
+    last_name: "Lin"
   })
 u2 = User.create({
     email: "mlee2569@gmail.com",
     password: temp_password,
     password_confirmation: temp_password,
     first_name: "Mu-Wah",
-    last_name: "Lee",
-    avatar: "muwah.jpg"
+    last_name: "Lee"
   })
 u3 = User.create({
     email: "charlie@gmail.com",
     password: temp_password,
     password_confirmation: temp_password,
     first_name: "Charlie",
-    last_name: "Morris",
-    avatar: "charlie.jpg"
+    last_name: "Morris"
   })
 
 Guide.destroy_all
