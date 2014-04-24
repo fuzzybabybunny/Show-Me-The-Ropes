@@ -1,0 +1,66 @@
+<!-- NAV BAR-->
+<div class="ui fixed transparent inverted menu grid six column stackable">
+  <a class="active item brand">
+    <i class="white url icon"></i> Show me the Ropes
+  </a>
+  <div class="ui compact inverted menu">
+  <div class="ui simple dropdown item"> Options
+    <i class="dropdown icon"></i>
+    <div class="menu" id="dropdown_menu">
+      <div class="item toggle button">Activities</div>
+      <!-- <div class="item" id="addpin">Add pin</div> -->
+    </div>
+  </div>
+</div>
+
+<%= render :partial => "right_menu" %>
+</div>
+
+<!-- SIDEBAR -->
+<div class="ui very thin sidebar">
+  <a class="active item">
+    <i class="heart large icon"></i>
+  </a>
+  <a class="active item">
+    <i class="heart large icon"></i>
+  </a>
+</div>
+
+
+<!-- MAP -->
+<div id="map_canvas"></div>
+<div class="popin"></div>
+
+
+<!-- SCRIPTS -->
+<script type="text/javascript">
+  $('.sidebar').first()
+  .sidebar('attach events', '.toggle.button')
+  ;
+  $('.toggle.button')
+    .removeClass('disabled')
+  ;
+</script>
+
+<!--Defining the structure of the pin popup window on load
+to allow ajax to grab it -->
+
+<div id="pinContent">
+  <div id="siteNotice"></div>
+    <h1 id="firstHeading" class="firstHeading"></h1>
+    <h3> Description </h3>
+      <div id="bodyContent"></div>
+    <h3> Guide </h3>
+      <div id="pinGuideName"></div>
+      <div class="item">
+        <div id="messagePinGuide" class="ui button">Contact Guide</div>
+        <div id="pinGuideEmail">
+          <a href="mailto:" + guideEmail>Email Guide</a>
+        </div>
+      </div>
+    <h3> Guide rating </h3>
+      <div id="pinGuideRating"></div>
+</div>
+
+<%= javascript_include_tag "pin_drop" %>
+<%= javascript_include_tag "ajax" %>
