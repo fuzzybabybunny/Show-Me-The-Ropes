@@ -100,6 +100,10 @@ function getPinData(id, template) {
     var pinGuideLastName = data["pin"]["guide_last_name"];
     var pinGuideRating = data["pin"]["guide_rating"];
     var pinGuideEmail = data["pin"]["guide_email"];
+    var pinGuideExperience = data["pin"]["guide_experience"];
+    var pinGuideAvatar = data["pin"]["guide_avatar"]["avatar"]["url"];
+
+    console.log(pinGuideAvatar);
 
     $('#firstHeading').html(pinTitle);
     $('#bodyContent').html(pinDescription);
@@ -122,6 +126,9 @@ function getPinData(id, template) {
         guideFirstName : pinGuideFirstName,
         guideLastName : pinGuideLastName,
         guideEmail : pinGuideEmail,
+        guideExperience : pinGuideExperience,
+        guideAvatar : pinGuideAvatar,
+        guideRating : pinGuideRating,
         pinActivity : pinTitle,
         pinDescription2 : pinDescription,
         userEmail : currentUserEmail,
@@ -132,6 +139,14 @@ function getPinData(id, template) {
       var messageSource = $('#messagePinGuideForm').html();
 
       var messageHTML = HandlebarsTemplates['messages/index'](messageData);
+
+      var profileHTML = HandlebarsTemplates['application/profile'](messageData);
+
+      // console.log(profileHTML);
+
+      $( "#pinGuideProfileButton" ).on("click", function() {
+        $('.popin').html(profileHTML).fadeIn();
+      });
 
       $( "#messagePinGuideButton" ).on("click", function() {
         $('.popin').html(messageHTML).fadeIn();
