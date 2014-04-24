@@ -24,11 +24,72 @@
 <!-- SIDEBAR -->
 <div class="ui styled sidebar">
   <h4 class="ui header">What activities do you like?</h4>
+
+ <!--  <div ng-init="activities = [{sport: 'Aerobatics'},
+                              {sport: 'Aggressive inline'},
+                              {sport: 'BMX'},
+                              {sport: 'BASE jumping'},
+                              {sport: 'Cave diving'},
+                              {sport: 'Caving'},
+                              {sport: 'Extreme ironing'},
+                              {sport: 'Freediving'},
+                              {sport: 'Freeflying'},
+                              {sport: 'Freestyle scootering'},
+                              {sport: 'Freeskiing'},
+                              {sport: 'Flowriding'},
+                              {sport: 'Hang gliding'},
+                              {sport: 'Hiking'},
+                              {sport: 'Ice climbing'},
+                              {sport: 'Ice canoeing'},
+                              {sport: 'Kitesurfing'},
+                              {sport: 'Kayaking'},
+                              {sport: 'Land windsurfing'},
+                              {sport: 'Longboarding'},
+                              {sport: 'Motocross'},
+                              {sport: 'Mountain biking'},
+                              {sport: 'Mountaineering'},
+                              {sport: 'Mountain boarding'},
+                              {sport: 'Open water swimming'},
+                              {sport: 'Paragliding'},
+                              {sport: 'Rallying'},
+                              {sport: 'Rafting'},
+                              {sport: 'Rock climbing'},
+                              {sport: 'Sandboarding'},
+                              {sport: 'Scuba diving'},
+                              {sport: 'Skateboarding'},
+                              {sport: 'Skiing'},
+                              {sport: 'Skydiving'},
+                              {sport: 'Skimboarding'},
+                              {sport: 'Snowboarding'},
+                              {sport: 'Snowmobile'},
+                              {sport: 'Snowskating'},
+                              {sport: 'Snow skiing'},
+                              {sport: 'Street luge'},
+                              {sport: 'Surfing'},
+                              {sport: 'Wakeboarding'},
+                              {sport: 'Waveski'},
+                              {sport: 'Whitewater kayaking'},
+                              {sport: 'Windsurfing'},
+                              {sport: 'Wingsuit flying'},
+                              {sport: 'Xpogo'}]"></div> -->
+
   <div class="ui icon input">
-    <input type="text" placeholder="Search...">
+    <input type="text" ng-model="searchText" placeholder="Search...">
     <i class="circular search icon"></i>
   </div>
+
+  <div ng-controller = "sportController">
+    <p>{{a.sport}}</p>
+  </div>
+
+  <!-- <div id="searchTextResults" ng-controller = "sportController">
+    <div g-repeat="activity in activities | filter:searchText">
+      <p class="sidebar_list">{{a.sport}}</p> -->
+    <!-- </div>
+  </div> -->
+
 </div>
+ <!-- ng-repeat="activity in activities | filter:searchText" -->
 
 
 <!-- MAP -->
@@ -103,3 +164,4 @@ to allow ajax to grab it -->
 
 <%= javascript_include_tag "pin_drop" %>
 <%= javascript_include_tag "ajax" %>
+<%= javascript_include_tag "angular_search" %>
