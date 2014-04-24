@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   before_filter :make_action_mailer_user_request_host_and_protocol
 
   def index
+    if @current_user ||= User.find_by(id: session[:user_id])
+      redirect_to admin_url
+    end
   end
 
   def profile

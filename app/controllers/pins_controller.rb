@@ -14,7 +14,8 @@ class PinsController < ApplicationController
     @pins = Pin.new(pin_params)
 
     if @pins.save
-      render :index, status: :created, location: pin_url(@pins)
+      # render :index, status: :created, location: pin_url(@pins)
+      redirect_to admin_url
     else
       head :unprocessable_entity
     end
