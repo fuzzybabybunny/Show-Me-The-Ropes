@@ -17,13 +17,20 @@
 </div>
 
 <!-- SIDEBAR -->
-<div class="ui very thin sidebar">
-  <a class="active item">
-    <i class="heart large icon"></i>
-  </a>
-  <a class="active item">
-    <i class="heart large icon"></i>
-  </a>
+<div class="ui styled sidebar">
+  <h4 class="ui header">What activities do you like?</h4>
+
+  <div class="ui icon input">
+    <input type="text" ng-model="searchText" placeholder="Search...">
+    <i class="circular search icon"></i>
+  </div>
+
+  <div id="searchTextResults" ng-controller="sportController">
+    <div ng-repeat="activity in activities | filter:searchText">
+      <p class="sidebar_list">{{activity.sport}}</p>
+    </div>
+  </div>
+
 </div>
 
 
@@ -58,3 +65,4 @@ to allow ajax to grab it -->
 
 <%= javascript_include_tag "pin_drop" %>
 <%= javascript_include_tag "ajax" %>
+<%= javascript_include_tag "angular_search" %>

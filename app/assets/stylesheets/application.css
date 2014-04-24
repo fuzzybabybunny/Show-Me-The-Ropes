@@ -74,6 +74,12 @@ body {
   font-weight: normal;
 }
 
+.sidebar_list{
+  margin-left: 15px;
+  cursor: pointer;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */ !important;
+}
+
 /*----- BODY -----*/
 
 #map_canvas {

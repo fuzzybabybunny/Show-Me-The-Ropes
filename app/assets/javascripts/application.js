@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require handlebars.runtime
 //= require_tree ./templates
+//= require angular
 //= require_tree .
 //= require ./vendor/noty/packaged/jquery.noty.packaged
 //= require ./vendor/noty/themes/default
