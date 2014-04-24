@@ -46,6 +46,7 @@ gem 'rabl'
 
 gem 'oj'
 gem 'carrierwave'
+gem 'angularjs-rails'
 
 group :development, :test do
 
