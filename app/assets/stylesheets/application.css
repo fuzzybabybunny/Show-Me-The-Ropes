@@ -68,6 +68,12 @@ body {
   padding-right:  5px;
 }
 
+.dropdwn{
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */ !important;
+  font-size: 0.875rem !important;
+  font-weight: normal;
+}
+
 /*----- BODY -----*/
 
 #map_canvas {
@@ -205,6 +211,7 @@ body, .ui.vertical.divider {
 
 .ui.textarea, .ui.form textarea {
   height: 5em !important;
+  min-height: 6em !important;
 }
 
 .experience_field{
