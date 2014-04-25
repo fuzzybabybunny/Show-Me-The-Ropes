@@ -87,6 +87,11 @@ body {
   margin-top: 43px;
 }
 
+.form_heading {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 
 /*----- PIN POPUP CONTENT -----*/
 
@@ -198,9 +203,9 @@ body, .ui.vertical.divider {
 }
 
 .ui.blue.button{
-  position:absolute;
+/*  position:absolute;
   right:  35px;
-  bottom: 15px;
+  bottom: 15px;*/
 }
 
 

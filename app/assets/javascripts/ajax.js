@@ -15,11 +15,14 @@ $(document).ready(function() {
   //   });
 
 
-$(".popin").on("click", ".close_message", function(event){
- alert("test");
- debugger;
+  $("#home").on("click", "#messageclose", function(event){
+    $('#messagePinGuideProfile').fadeOut();
+  });
 
-});
+  $("#home").on("click", "#messageclose", function(event){
+    $('#messagePinGuideForm').fadeOut();
+  });
+
 
   $( "#register" ).on("click", function() {
     $.ajax('/register.html', {
