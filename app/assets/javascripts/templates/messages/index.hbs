@@ -1,6 +1,6 @@
 <div id="messagePinGuideForm" class="ui raised segment signin">
   <div class="cmborder">
-    <h1>Send a message to {{guideFirstName}} {{guideLastName}} about {{pinActivity}}!</h1>
+    <div class="form_heading">Send a message to {{guideFirstName}} {{guideLastName}} about {{pinActivity}}!</div>
     <form action="/message" method="post">
       <div class="ui form attached fluid segment">
         <div class="two fields">
@@ -39,9 +39,12 @@
         <div class="inline field">
           <input type="hidden" name="message[pinDescription]" value="{{pinDescription2}}">
         </div>
-        <input type="submit" value="Send" class="ui blue submit button">
+        <div class="inline field">
+          <input type="submit" value="Send" class="ui blue submit button">
+        </div>
       </div>
     </form>
   <span class='close_message' id="messageclose">&times;</span>
   </div>
 </div>
+

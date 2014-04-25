@@ -1,4 +1,4 @@
-<div class="ui raised segment signin">
+<div id="messagePinGuideProfile" class="ui raised segment signin">
   <h3 class="ui inverted green block header">{{guideFirstName}} {{guideLastName}}</h3>
   <div class="ui two column grid basic segment">
     <div class="column">
@@ -21,10 +21,14 @@
 
   <div class="ui divider"></div>
   <div class="footer">
-  <p>{{guideRating}}</p>
-  <a class="ui blue button" id="message">Message</a>
-  <span class='close_profile'>&times;</span>
+  <p>Guide Rating: {{guideRating}}</p>
+  <span id='messageclose' class='close_profile'>&times;</span>
   </div>
 
 </div>
 
+<script>
+  $( "#messageclose" ).on("click", function() {
+      $('#messagePinGuideProfile').fadeOut();
+    });
+</script>
