@@ -14,6 +14,13 @@ $(document).ready(function() {
   //     });
   //   });
 
+
+$(".popin").on("click", ".close_message", function(event){
+ alert("test");
+ debugger;
+
+});
+
   $( "#register" ).on("click", function() {
     $.ajax('/register.html', {
       success: function(response) {
@@ -41,6 +48,11 @@ $(document).ready(function() {
   //       }
   //     });
   //   });
+
+  $( "#messageclose" ).on("click", function() {
+      console.log("Guide Message is being closed!");
+      $('#messagePinGuideForm').fadeOut();
+    });
 
   $( "#pinGuideName" ).on("click", function() {
     $.ajax({
