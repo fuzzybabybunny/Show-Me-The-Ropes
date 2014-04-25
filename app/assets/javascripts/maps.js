@@ -107,7 +107,7 @@ function getPinData(id, template) {
 
     $('#firstHeading').html(pinTitle);
     $('#bodyContent').html(pinDescription);
-    $('#pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
+    $('.pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
 
     // Second AJAX call nested inside the first one to get the data

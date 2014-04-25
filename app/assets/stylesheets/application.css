@@ -109,13 +109,14 @@ body {
   box-shadow: 0px 0px 0px 0px #DDDDDD !important;
 }
 
-#bodyContent, #pinGuideName, #pinGuideRating {
+#bodyContent, .pinGuideName, #pinGuideRating {
   margin-top: -10px;
 }
 
-#pinGuideName{
+.pinGuideName{
   cursor: pointer;
   color:  blue;
+  margin-left: -4px;
 }
 
 #pinGuideName:hover {
