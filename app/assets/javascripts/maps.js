@@ -92,7 +92,8 @@ function getPinData(id, template) {
     data: "JSON"
   }).success(function(data){
 
-    var pinTitle = data["pin"]["activity"];
+    var pinTitle = data["pin"]["title"]
+    var pinActivity = data["pin"]["activity"];
     var pinDescription = data["pin"]["description"];
     var pinLong = data["pin"]["long"];
     var pinLat = data["pin"]["lat"];
@@ -106,6 +107,7 @@ function getPinData(id, template) {
     console.log(pinGuideAvatar);
 
     $('#firstHeading').html(pinTitle);
+    $('#bodyActivity').html(pinActivity);
     $('#bodyContent').html(pinDescription);
     $('.pinGuideName').html(pinGuideFirstName + " " + pinGuideLastName);
     $('#pinGuideRating').html(pinGuideRating);
