@@ -5,7 +5,7 @@ function initialize() {
   var map_options = {
     center: new google.maps.LatLng(19, 0),
     zoom: 3,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
     styles: [
       ]
    }

@@ -5,6 +5,7 @@ class BackendController < ApplicationController
 
   def index
     @current_user ||= User.find_by(id: session[:user_id])
+    @current_guide ||= User.find_by(id: session[:user_id]).guide.id
   end
 
   def message
