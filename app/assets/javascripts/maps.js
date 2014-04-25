@@ -118,9 +118,14 @@ function getPinData(id, template) {
       data: "JSON"
     }).success(function(data){
 
-      var currentUserEmail = data["user"]["email"];
-      var currentUserFirstName = data["user"]["first_name"];
-      var currentUserLastName = data["user"]["last_name"];
+      if(! data["user"]){
+        var currentUserEmail = "non User";
+        var currentUserFirstName = "non User";
+        var currentUserLastName = "non User"}
+        else{
+        var currentUserEmail = data["user"]["email"];
+        var currentUserFirstName = data["user"]["first_name"];
+        var currentUserLastName = data["user"]["last_name"]};
 
       var messageData = {
         guideFirstName : pinGuideFirstName,
