@@ -1,0 +1,34 @@
+<div id="editUserPinForm" class="ui raised segment signin">
+  <div class="cmborder">
+    <div class="form_heading">Edit Your Pin</div>
+    <form action="/pin" method="patch">
+      <div class="ui form attached fluid segment">
+        <div class="two fields">
+          <div class="field">
+            <label>Title</label>
+            <input type="text" name="pin[title]" class="ui input" value="{{title}}">
+          </div>
+          <div class="field">
+            <label>Activity</label>
+            <input type="text" name="pin[activity]" class="ui input" value="{{activity}}">
+          </div>
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <input type="text" name="pin[description]" class="ui input" value="{{description}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="pin[guideID]" value="{{guide_id}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="pin[pinID]" value="{{id}}">
+        </div>
+        <div class="inline field">
+          <input type="submit" value="Send" class="ui blue submit button">
+        </div>
+      </div>
+    </form>
+  <span class='close_message' id="messageclose">&times;</span>
+  </div>
+</div>
+
