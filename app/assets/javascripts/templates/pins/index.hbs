@@ -1,6 +1,12 @@
 <div id="allUserPinsWindow" class="ui raised segment signin">
   <div class="cmborder">
-    <div class="form_heading">These are all the pins for {{guideFirstName}} {{guideLastName}}!</div>
+    <div class="form_heading">These are all the pins:
+    {{#each user/guide_pins}}
+      {{title}}
+      {{activity}}
+      {{description}}
+    {{/each}}
+    </div>
   <span class='close_message' id="messageclose">&times;</span>
   </div>
 </div>

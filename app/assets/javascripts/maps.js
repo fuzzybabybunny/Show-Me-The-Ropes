@@ -80,23 +80,22 @@ function getAllPins() {
   })
 }
 
-// RETRIEVE ALL USER'S PINS FROM DB
-function getAllPins() {
+// RETRIEVE ALL CURRENT USER'S PINS FROM DB
+function getAllCurrentUserPins() {
+
   $.ajax({
-    url: "/api/pins/",
+    url: "/api/current_user",
     type: "GET",
     data: "JSON"
   }).success(function(data){
-    for (var i = 0; i < data["pins"].length; i++) {
-      var pinID = data["pins"][i]["pin"]["id"];
-      var pinLong = data["pins"][i]["pin"]["long"];
-      var pinLat = data["pins"][i]["pin"]["lat"];
-      var pinActivity = data["pins"][i]["pin"]["activity"];
+    console.log(data);
+    // var guidePins = data["user"]["guide_pins"];
+    // console.log(guidePins);
+    var guidePinsHTML = HandlebarsTemplates['pins/index'](data);
+    console.log(guidePinsHTML);
+  });
 
-      dbMarker(pinLat, pinLong, pinID, pinActivity)
-    }
-  })
-}
+};
 
 
 // GET DATA FROM PINS, GET DATA FROM CURRENT USER,
