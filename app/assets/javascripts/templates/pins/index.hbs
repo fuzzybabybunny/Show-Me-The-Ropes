@@ -1,13 +1,33 @@
 <div id="allUserPinsWindow" class="ui raised segment signin">
   <div class="cmborder">
-    <div class="form_heading">These are all the pins:
-    {{#each user/guide_pins}}
-      {{title}}
-      {{activity}}
-      {{description}}
-    {{/each}}
-    </div>
-  <span class='close_message' id="messageclose">&times;</span>
+    <table class="ui table segment">
+        <thead>
+          <tr><th>Title</th>
+          <th>Activity</th>
+          <th>Description</th>
+          <th colspan="2">Actions</th>
+        </tr></thead>
+        <tbody>
+          {{#each user/guide_pins}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{activity}}</td>
+            <td>{{description}}</td>
+            <td>
+              <i class="edit icon"></i>
+            </td>
+            <td>
+              <i class="trash icon"></i>
+            </td>
+          </tr>
+          {{/each}}
+    </table>
+    <span class='close_message' id="messageclose">&times;</span>
   </div>
 </div>
 
+<script>
+  $( "#messageclose" ).on("click", function() {
+      $('#allUserPinsWindow').fadeOut();
+    });
+</script>

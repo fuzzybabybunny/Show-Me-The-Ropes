@@ -80,23 +80,6 @@ function getAllPins() {
   })
 }
 
-// RETRIEVE ALL CURRENT USER'S PINS FROM DB
-function getAllCurrentUserPins() {
-
-  $.ajax({
-    url: "/api/current_user",
-    type: "GET",
-    data: "JSON"
-  }).success(function(data){
-    console.log(data);
-    // var guidePins = data["user"]["guide_pins"];
-    // console.log(guidePins);
-    var guidePinsHTML = HandlebarsTemplates['pins/index'](data);
-    console.log(guidePinsHTML);
-  });
-
-};
-
 
 // GET DATA FROM PINS, GET DATA FROM CURRENT USER,
 // CONTACT FORM TO MESSAGE GUIDE
@@ -159,8 +142,6 @@ function getPinData(id, template) {
         userFirstName : currentUserFirstName,
         userLastName : currentUserLastName
       };
-
-      var messageSource = $('#messagePinGuideForm').html();
 
       var messageHTML = HandlebarsTemplates['messages/index'](messageData);
 

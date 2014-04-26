@@ -14,6 +14,25 @@ $(document).ready(function() {
   //     });
   //   });
 
+  // RETRIEVE ALL CURRENT USER'S PINS FROM DB
+  function getAllCurrentUserPins() {
+
+    $.ajax({
+      url: "/api/current_user",
+      type: "GET",
+      data: "JSON"
+    }).success(function(data){
+      // var guidePins = data["user"]["guide_pins"];
+      // console.log(guidePins);
+      var guidePinsHTML = HandlebarsTemplates['pins/index'](data);
+      console.log(guidePinsHTML);
+
+      $('.popin').html(guidePinsHTML).fadeIn();
+
+
+    });
+
+  };
 
   $("#home").on("click", "#messageclose", function(event){
     $('#messagePinGuideProfile').fadeOut();
@@ -23,6 +42,9 @@ $(document).ready(function() {
     $('#messagePinGuideForm').fadeOut();
   });
 
+  $("#home").on("click", "#mypins", function(event){
+    getAllCurrentUserPins();
+  });
 
   $( "#register" ).on("click", function() {
     $.ajax('/register.html', {
