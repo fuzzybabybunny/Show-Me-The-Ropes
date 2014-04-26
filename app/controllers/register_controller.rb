@@ -18,8 +18,15 @@ WELCOME = "Welcome to Show me the Ropes"
     else
       #register new user
       @user = User.new(user_params)
-      @user.save
-      return if log_user_in( @user, WELCOME )
+      if @user.save
+        @guide = Guide.new(user_id: @user.id, guide_experience: "")
+        @guide.save
+        @rookie = Rookie.new(user_id: @user.id, rookie_experience: "")
+        @rookie.save
+        return if log_user_in( @user, WELCOME )
+      else
+        redirect_to root_url
+      end
 
     end
     # (redirect_to new_user and return) unless registration occurs?
