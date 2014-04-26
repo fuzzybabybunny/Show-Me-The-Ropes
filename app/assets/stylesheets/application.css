@@ -49,6 +49,10 @@ body {
   margin: 6px 0 -6px 0;
 }
 
+.logout a {
+  text-decoration: none;
+}
+
 /*.ui.input input {
   margin-top: 3px !important;
   font-size: 14px !important;

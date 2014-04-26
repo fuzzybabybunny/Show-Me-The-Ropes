@@ -80,6 +80,24 @@ function getAllPins() {
   })
 }
 
+// RETRIEVE ALL USER'S PINS FROM DB
+function getAllPins() {
+  $.ajax({
+    url: "/api/pins/",
+    type: "GET",
+    data: "JSON"
+  }).success(function(data){
+    for (var i = 0; i < data["pins"].length; i++) {
+      var pinID = data["pins"][i]["pin"]["id"];
+      var pinLong = data["pins"][i]["pin"]["long"];
+      var pinLat = data["pins"][i]["pin"]["lat"];
+      var pinActivity = data["pins"][i]["pin"]["activity"];
+
+      dbMarker(pinLat, pinLong, pinID, pinActivity)
+    }
+  })
+}
+
 
 // GET DATA FROM PINS, GET DATA FROM CURRENT USER,
 // CONTACT FORM TO MESSAGE GUIDE
