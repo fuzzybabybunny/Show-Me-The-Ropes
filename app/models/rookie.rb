@@ -4,6 +4,5 @@ class Rookie < ActiveRecord::Base
   has_many :rookie_messages
   has_many :guide_reviews
   has_many :rookie_reviews
-  dependent: :destroy
 
 end

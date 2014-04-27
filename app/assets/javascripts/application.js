@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require angular
 //= require angular_search
+//= require jquery.restfulizer
 //= require handlebars.runtime
 //= require_tree ./templates
 //= require_tree .

@@ -18,7 +18,7 @@
               <i class="circular large edit link icon" href="javascript:void(0)" onClick="editPinFormPopup({{id}})"></i>
             </td>
             <td>
-              <i class="circular large trash link icon" ></i>
+              <i class="circular large trash link icon rest" href="api/pins/{{id}}" data-method="DELETE"></i>
             </td>
           </tr>
           {{/each}}
@@ -32,6 +32,8 @@
   $( "#messageclose" ).on("click", function() {
       $('#allUserPinsWindow').fadeOut();
     });
+
+  $(".rest").restfulizer();
 </script>
 
 <script>
