@@ -5,6 +5,7 @@ class Guide < ActiveRecord::Base
   has_many :guide_reviews
   has_many :rookie_reviews
   has_many :pins
+  dependent: :destroy
 
 end
 

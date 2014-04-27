@@ -1,7 +1,7 @@
 <div id="editUserPinForm" class="ui raised segment signin">
   <div class="cmborder">
     <div class="form_heading">Edit Your Pin</div>
-    <form action="/pin" method="patch">
+    <form action="/api/pins/{{pin/id}}" method="patch">
       <div class="ui form attached fluid segment">
         <div class="two fields">
           <div class="field">
@@ -15,13 +15,16 @@
         </div>
         <div class="field">
           <label>Description</label>
-          <input type="text" name="pin[description]" class="ui input" value="{{pin/description}}">
+          <textarea name="pin[description]" class="ui input">{{pin/description}}</textarea>
         </div>
         <div class="inline field">
           <input type="hidden" name="pin[guideID]" value="{{pin/guide_id}}">
         </div>
         <div class="inline field">
-          <input type="hidden" name="pin[pinID]" value="{{pin/id}}">
+          <input type="hidden" name="pin[lat]" value="{{pin/lat}}">
+        </div>
+        <div class="inline field">
+          <input type="hidden" name="pin[long]" value="{{pin/long}}">
         </div>
         <div class="inline field">
           <input type="submit" value="Submit Changes" class="ui blue submit button">
