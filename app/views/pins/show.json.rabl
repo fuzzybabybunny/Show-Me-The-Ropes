@@ -1,5 +1,6 @@
 object @pin
 
+attributes :id
 attributes :title
 attributes :long
 attributes :lat

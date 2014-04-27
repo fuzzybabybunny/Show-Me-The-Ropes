@@ -15,6 +15,7 @@ $(document).ready(function() {
   //   });
 
   // RETRIEVE ALL CURRENT USER'S PINS FROM DB
+  // GENERATES VIEW OF ALL USER'S PINS
   function getAllCurrentUserPins() {
 
     $.ajax({
@@ -22,13 +23,11 @@ $(document).ready(function() {
       type: "GET",
       data: "JSON"
     }).success(function(data){
-      // var guidePins = data["user"]["guide_pins"];
-      // console.log(guidePins);
+      console.log(data);
       var guidePinsHTML = HandlebarsTemplates['pins/index'](data);
       console.log(guidePinsHTML);
 
       $('.popin').html(guidePinsHTML).fadeIn();
-
 
     });
 

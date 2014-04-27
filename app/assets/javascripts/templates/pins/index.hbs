@@ -1,6 +1,7 @@
 <div id="allUserPinsWindow" class="ui raised segment signin">
   <div class="cmborder">
     <table class="ui table segment">
+      <caption>{{user/first_name}}'s Pins</caption>
         <thead>
           <tr><th>Title</th>
           <th>Activity</th>
@@ -14,7 +15,7 @@
             <td>{{activity}}</td>
             <td>{{description}}</td>
             <td>
-              <i class="circular large edit link icon"></i>
+              <i class="circular large edit link icon" href="javascript:void(0)" onClick="editPinFormPopup({{id}})"></i>
             </td>
             <td>
               <i class="circular large trash link icon"></i>
@@ -31,4 +32,25 @@
   $( "#messageclose" ).on("click", function() {
       $('#allUserPinsWindow').fadeOut();
     });
+</script>
+
+<script>
+
+function editPinFormPopup(id) {
+
+$.ajax({
+      url: "/api/pins/" + id,
+      type: "GET",
+      data: "JSON"
+    }).success(function(data){
+      console.log(data);
+      var editPinFormHTML = HandlebarsTemplates['pins/edit'](data);
+      console.log(editPinFormHTML);
+
+      $('.popin').html(editPinFormHTML).fadeIn();
+
+    });
+
+};
+
 </script>

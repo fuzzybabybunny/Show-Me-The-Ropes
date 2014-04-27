@@ -6,25 +6,25 @@
         <div class="two fields">
           <div class="field">
             <label>Title</label>
-            <input type="text" name="pin[title]" class="ui input" value="{{title}}">
+            <input type="text" name="pin[title]" class="ui input" value="{{pin/title}}">
           </div>
           <div class="field">
             <label>Activity</label>
-            <input type="text" name="pin[activity]" class="ui input" value="{{activity}}">
+            <input type="text" name="pin[activity]" class="ui input" value="{{pin/activity}}">
           </div>
         </div>
         <div class="field">
           <label>Description</label>
-          <input type="text" name="pin[description]" class="ui input" value="{{description}}">
+          <input type="text" name="pin[description]" class="ui input" value="{{pin/description}}">
         </div>
         <div class="inline field">
-          <input type="hidden" name="pin[guideID]" value="{{guide_id}}">
+          <input type="hidden" name="pin[guideID]" value="{{pin/guide_id}}">
         </div>
         <div class="inline field">
-          <input type="hidden" name="pin[pinID]" value="{{id}}">
+          <input type="hidden" name="pin[pinID]" value="{{pin/id}}">
         </div>
         <div class="inline field">
-          <input type="submit" value="Send" class="ui blue submit button">
+          <input type="submit" value="Submit Changes" class="ui blue submit button">
         </div>
       </div>
     </form>
@@ -32,3 +32,8 @@
   </div>
 </div>
 
+<script>
+  $( "#messageclose" ).on("click", function() {
+      $('#editUserPinForm').fadeOut();
+    });
+</script>
