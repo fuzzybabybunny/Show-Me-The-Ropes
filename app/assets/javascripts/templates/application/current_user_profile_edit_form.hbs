@@ -1,0 +1,64 @@
+<div id="currentUserProfile" class="ui raised segment signin">
+  <form id="currentUserProfileEditForm">
+    <h3 class="ui inverted green block header">
+    <input type="text" name="user[first_name]" class="ui input" value="{{currentUserFirstName}}">
+    <input type="text" name="user[last_name]" class="ui input" value="{{currentUserLastName}}">
+    </h3>
+    <div class="ui two column grid basic segment">
+      <div class="column">
+
+        <div class="ui form">
+          <div class="profileWidget">
+          <img class="profile" src="{{currentUserAvatar}}" alt="" />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="ui vertical divider"></div>
+      <div class="center aligned column">
+        <h4 class="ui header">Your Guide Experience </h4>
+        <p><textarea name="user[last_name]" class="ui input">{{currentUserGuideExperience}}</textarea></p>
+        <h4 class="ui header">Your Rookie Experience</h4>
+        <p><textarea name="user[last_name]" class="ui input">{{currentUserRookieExperience}}</textarea></p>
+        <h4 class="ui header">Your Email</h4>
+        <p><input type="text" name="user[last_name]" class="ui input" value="{{currentUserEmail}}"></p>
+      </div>
+      <div class="center aligned column">
+
+      </div>
+
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="footer">
+    <p>Your Rating: {{currentUserRating}}</p>
+    <span id='messageclose' class='close_profile'>&times;</span>
+    </div>
+    <div class="inline field">
+      <input type="submit" value="Submit Changes" class="ui blue submit button">
+    </div>
+  </form>
+</div>
+
+<script>
+  $( "#messageclose" ).on("click", function() {
+      $('#currentUserProfile').fadeOut();
+    });
+
+  $("#currentUserProfileEditForm").submit(function(event) {
+    event.preventDefault();
+
+    $.ajax({
+         type: "PATCH",
+         url: "api/current_user",
+         contentType: 'application/json',
+         dataType: 'json',
+         data: $('#currentUserProfileEditForm').serializeJSON()
+     }).success(function(){
+        alert("Your profile has been edited!");
+        $('.popin').html(currentUserProfileHTML).fadeIn();
+     });
+
+  });
+</script>

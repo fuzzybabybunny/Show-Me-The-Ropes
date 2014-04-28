@@ -1,0 +1,45 @@
+<div id="currentUserProfile" class="ui raised segment signin">
+  <h3 class="ui inverted green block header">{{currentUserFirstName}} {{currentUserLastName}}</h3>
+  <div class="ui two column grid basic segment">
+    <div class="column">
+
+      <div class="ui form">
+        <div class="profileWidget">
+        <img class="profile" src="{{currentUserAvatar}}" alt="" />
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ui vertical divider"></div>
+    <div class="center aligned column">
+      <h4 class="ui header">Your Guide Experience </h4>
+      <p>{{currentUserGuideExperience}}</p>
+      <h4 class="ui header">Your Rookie Experience</h4>
+      <p>{{currentUserRookieExperience}}</p>
+      <h4 class="ui header">Your Email</h4>
+      <p>{{currentUserEmail}}</p>
+      <h4 class="ui header">Your Rating</h4>
+      <p>{{currentUserRating}}</p>
+    </div>
+    <div class="center aligned column">
+
+    </div>
+  </div>
+
+  <div class="ui divider"></div>
+  <div class="inline field">
+    <input id="editprofile" value="Edit Profile" class="ui blue submit button">
+    <input value="Delete Me" class="ui red submit button">
+  </div>
+  <div class="footer">
+  <span id='messageclose' class='close_profile'>&times;</span>
+  </div>
+
+</div>
+
+<script>
+  $( "#messageclose" ).on("click", function() {
+      $('#currentUserProfile').fadeOut();
+    });
+</script>
