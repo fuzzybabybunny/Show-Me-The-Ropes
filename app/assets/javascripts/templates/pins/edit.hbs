@@ -1,7 +1,7 @@
-<div id="editUserPinForm" class="ui raised segment signin">
+<div id="editUserPin" class="ui raised segment signin">
   <div class="cmborder">
     <div class="form_heading">Edit Your Pin</div>
-    <form action="/api/pins/{{pin/id}}" method="patch">
+    <form id="editUserPinForm">
       <div class="ui form attached fluid segment">
         <div class="two fields">
           <div class="field">
@@ -17,15 +17,7 @@
           <label>Description</label>
           <textarea name="pin[description]" class="ui input">{{pin/description}}</textarea>
         </div>
-        <div class="inline field">
-          <input type="hidden" name="pin[guideID]" value="{{pin/guide_id}}">
-        </div>
-        <div class="inline field">
-          <input type="hidden" name="pin[lat]" value="{{pin/lat}}">
-        </div>
-        <div class="inline field">
-          <input type="hidden" name="pin[long]" value="{{pin/long}}">
-        </div>
+
         <div class="inline field">
           <input type="submit" value="Submit Changes" class="ui blue submit button">
         </div>
@@ -36,7 +28,26 @@
 </div>
 
 <script>
+
   $( "#messageclose" ).on("click", function() {
-      $('#editUserPinForm').fadeOut();
-    });
+    $('#editUserPin').fadeOut();
+    getAllCurrentUserPins();
+  });
+
+  $("#editUserPinForm").submit(function(event) {
+    event.preventDefault();
+
+    $.ajax({
+         type: "PATCH",
+         url: "api/pins/{{pin/id}}",
+         contentType: 'application/json',
+         dataType: 'json',
+         data: $('#editUserPinForm').serializeJSON()
+     }).success(function(){
+        alert("Pin edited!");
+        getAllCurrentUserPins(); //response from server.
+     });
+
+  });
+
 </script>

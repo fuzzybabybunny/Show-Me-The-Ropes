@@ -18,7 +18,7 @@
               <i class="circular large edit link icon" href="javascript:void(0)" onClick="editPinFormPopup({{id}})"></i>
             </td>
             <td>
-              <i class="circular large trash link icon rest" href="api/pins/{{id}}" data-method="DELETE"></i>
+              <i class="circular large trash link icon" href="javascript:void(0)" onClick="deletePin({{id}})"></i>
             </td>
           </tr>
           {{/each}}
@@ -38,6 +38,16 @@
 
 <script>
 
+function deletePin(id) {
+  $.ajax({
+       type: "DELETE",
+       url: "api/pins/" + id
+   }).success(function(){
+      alert("Pin Deleted!");
+      getAllCurrentUserPins(); //response from server.
+   });
+};
+
 function editPinFormPopup(id) {
 
 $.ajax({
@@ -45,9 +55,9 @@ $.ajax({
       type: "GET",
       data: "JSON"
     }).success(function(data){
-      console.log(data);
+      // console.log(data);
       var editPinFormHTML = HandlebarsTemplates['pins/edit'](data);
-      console.log(editPinFormHTML);
+      // console.log(editPinFormHTML);
 
       $('.popin').html(editPinFormHTML).fadeIn();
 

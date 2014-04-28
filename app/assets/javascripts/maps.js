@@ -104,8 +104,6 @@ function getPinData(id, template) {
     var pinGuideExperience = data["pin"]["guide_experience"];
     var pinGuideAvatar = data["pin"]["guide_avatar"]["avatar"]["url"];
 
-    console.log(pinGuideAvatar);
-
     $('#firstHeading').html(pinTitle);
     $('#bodyActivity').html(pinActivity);
     $('#bodyContent').html(pinDescription);
