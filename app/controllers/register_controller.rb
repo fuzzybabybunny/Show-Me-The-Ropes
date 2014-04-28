@@ -11,10 +11,13 @@ WELCOME = "Welcome to Show me the Ropes"
   def create
     if (params[:user][:email].blank? or params[:user][:password].blank? or params[:user][:password_confirmation].blank?)
       flash.now[:alert] = BLANK_FIELDS
+      redirect_to root_url
     elsif params[:user][:email] == User.find_by( params[:email] )
       flash.now[:alert] = ALREADY_REGISTERED
+      redirect_to root_url
     elsif (params[:user][:password] != params[:user][:password_confirmation])
       flash.now[:alert] = NON_MATCHING_PASSWORDS
+      redirect_to root_url
     else
       #register new user
       @user = User.new(user_params)
@@ -30,11 +33,11 @@ WELCOME = "Welcome to Show me the Ropes"
 
     end
     # (redirect_to new_user and return) unless registration occurs?
-    if current_user
-      redirect_to root_url
-    else
-      render :index
-    end
+    # if current_user
+    #   redirect_to root_url
+    # else
+    #   render :index
+    # end
 
   end
 
