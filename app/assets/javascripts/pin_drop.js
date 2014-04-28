@@ -32,8 +32,10 @@ $( "#addpin" ).on( "click", function() {
       longitude = marker.getPosition().lng();
       console.log("lat dragged: " + latitude);
       console.log("long dragged: " + longitude);
-
-
+      marker.setPosition(marker.getPosition());
+      console.log(marker.position);
+      console.log(marker);
+      return marker;
     });
 
 
