@@ -63,38 +63,47 @@
 
 <script>
 
-$.ajax({
-      url: "/api/current_user",
-      type: "GET",
-      data: "JSON"
-    }).success(function(data){
+function getCurrentUserData() {
 
-      var profileData = {
-        currentUserFirstName : data["user"]["first_name"],
-        currentUserLastName : data["user"]["last_name"],
-        currentUserEmail : data["user"]["email"],
-        currentUserAvatar : data["user"]["avatar"]["avatar"]["url"],
-        currentUserGuideExperience : data["user"]["guide_experience"],
-        currentUserGuideReviews : data["user"]["guide_reviews"],
-        currentUserRookieExperience : data["user"]["rookie_experience"],
-        currentUserRookieReviews : data["user"]["rookie_reviews"]
-      };
+  $.ajax({
+        url: "/api/current_user",
+        type: "GET",
+        data: "JSON"
+      }).success(function(data){
 
-      console.log(profileData);
+        var profileData = {
+          currentUserID : data["user"]["id"],
+          currentUserFirstName : data["user"]["first_name"],
+          currentUserLastName : data["user"]["last_name"],
+          currentUserEmail : data["user"]["email"],
+          currentUserAvatar : data["user"]["avatar"]["avatar"]["url"],
+          currentUserGuideExperience : data["user"]["guide_experience"],
+          currentUserGuideReviews : data["user"]["guide_reviews"],
+          currentUserRookieExperience : data["user"]["rookie_experience"],
+          currentUserRookieReviews : data["user"]["rookie_reviews"]
+        };
 
-      var currentUserProfileHTML = HandlebarsTemplates['application/current_user_profile'](profileData);
+        console.log(profileData);
 
-      var currentUserProfileEditFormHTML = HandlebarsTemplates['application/current_user_profile_edit_form'](profileData);
+        var currentUserProfileHTML = HandlebarsTemplates['application/current_user_profile'](profileData);
 
-      $("#myprofile").on("click", function() {
-        $('.popin').html(currentUserProfileHTML).fadeIn();
-      });
+        window.currentUserProfileHTML = currentUserProfileHTML;
 
-      $("#home").on("click", "#editprofile", function() {
-        $('.popin').html(currentUserProfileEditFormHTML).fadeIn();
-      });
+        var currentUserProfileEditFormHTML = HandlebarsTemplates['application/current_user_profile_edit_form'](profileData);
 
-});
+        $("#myprofile").on("click", function() {
+          $('.popin').html(currentUserProfileHTML).fadeIn();
+        });
+
+        $("#home").on("click", "#editprofile", function() {
+          $('.popin').html(currentUserProfileEditFormHTML).fadeIn();
+        });
+
+  });
+
+};
+
+getCurrentUserData();
 
 </script>
 

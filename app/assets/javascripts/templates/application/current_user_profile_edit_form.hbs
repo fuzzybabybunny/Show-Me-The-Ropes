@@ -18,11 +18,12 @@
       <div class="ui vertical divider"></div>
       <div class="center aligned column">
         <h4 class="ui header">Your Guide Experience </h4>
-        <p><textarea name="user[last_name]" class="ui input">{{currentUserGuideExperience}}</textarea></p>
+        <p><textarea name="user[guide_experience]" class="ui input">{{currentUserGuideExperience}}</textarea></p>
         <h4 class="ui header">Your Rookie Experience</h4>
-        <p><textarea name="user[last_name]" class="ui input">{{currentUserRookieExperience}}</textarea></p>
+        <p><textarea name="user[rookie_experience]" class="ui input">{{currentUserRookieExperience}}</textarea></p>
         <h4 class="ui header">Your Email</h4>
-        <p><input type="text" name="user[last_name]" class="ui input" value="{{currentUserEmail}}"></p>
+        <p><input type="text" name="user[email]" class="ui input" value="{{currentUserEmail}}"></p>
+        <p><input type="text" name="user[id]" class="ui input" value="{{currentUserID}}"></p>
       </div>
       <div class="center aligned column">
 
@@ -51,13 +52,14 @@
 
     $.ajax({
          type: "PATCH",
-         url: "api/current_user",
+         url: "api/users/{{currentUserID}}",
          contentType: 'application/json',
          dataType: 'json',
          data: $('#currentUserProfileEditForm').serializeJSON()
      }).success(function(){
-        alert("Your profile has been edited!");
-        $('.popin').html(currentUserProfileHTML).fadeIn();
+        getCurrentUserData();
+        console.log(currentUserProfileHTML);
+        $('.popin').html(window.currentUserProfileHTML).fadeIn();
      });
 
   });

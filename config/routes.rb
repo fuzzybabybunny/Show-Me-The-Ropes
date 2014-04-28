@@ -27,15 +27,15 @@ ShowMeTheRopes::Application.routes.draw do
   # AFTER LOGIN
   get     'admin'     => 'backend#index'
 
-  # CURRENT USER
-  get "current_user" => 'users#current_user'
-  patch "current_user" => 'users#update' {:format => :json}
-  delete "current_user" => 'users#destroy' {:format => :json}
+  # # CURRENT USER
+  # patch "current_user" => 'users#update' {:format => :json}
+  # delete "current_user" => 'users#destroy' {:format => :json}
 
   scope :api, except: [ :new, :edit ], defaults: { format: :json } do
     get '' => "api#index", as: :api
 
     resources :users
+    get "current_user" => 'users#current_user'
 
     resources :guides
 
