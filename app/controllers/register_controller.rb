@@ -48,7 +48,7 @@ WELCOME = "Welcome to Show me the Ropes"
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :avatar)
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :avatar, :avatar_cache, :remote_avatar_url)
   end
 
 end

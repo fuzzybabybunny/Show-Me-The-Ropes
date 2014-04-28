@@ -25,13 +25,13 @@
     <!-- Picture upload -->
     <div class="pic_upload">
       <p>
-        <%= f.label :upload_image %><br />
+        <%= f.label :upload_avatar %><br />
         <%= f.file_field :avatar %><br />
-        <%= f.hidden_field :image_cache %>
+        <%= f.hidden_field :avatar_cache %>
       </p>
       <p>
-        <%= f.label :remote_image_url, "or image url" %><br />
-        <%= f.text_field :remote_image_url %>
+        <%= f.label :remote_avatar_url, "or image url" %><br />
+        <%= f.text_field :remote_avatar_url %>
       </p>
     </div>
 
