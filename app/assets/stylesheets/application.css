@@ -123,6 +123,11 @@ body {
   margin-top: -10px;
 }
 
+#allUserPinsTable.cmborder {
+  max-height: 400px;
+  overflow: scroll;
+}
+
 .pinGuideName{
   cursor: pointer;
   color:  blue;
