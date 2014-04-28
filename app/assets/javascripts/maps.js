@@ -143,7 +143,7 @@ function getPinData(id, template) {
 
       var messageHTML = HandlebarsTemplates['messages/index'](messageData);
 
-      var profileHTML = HandlebarsTemplates['application/profile'](messageData);
+      var profileHTML = HandlebarsTemplates['application/guide_profile'](messageData);
 
       // console.log(profileHTML);
 

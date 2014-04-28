@@ -24,6 +24,8 @@ class UsersController < ApplicationController
 
   def update
     @users = User.find params[:id]
+    @current_guide ||= User.find_by(id: session[:user_id]).guide
+    @current_rookie ||= User.find_by(id: session[:user_id]).rookie
 
     if @users
       if @users.update_attributes(user_params)
@@ -34,6 +36,28 @@ class UsersController < ApplicationController
     else
       head :not_found
     end
+
+    if @current_guide
+      if @current_guide.update_attributes(:guide_experience => params[:user][:guide_experience])
+
+        head :no_content
+      else
+        head :unprocessable_entity
+      end
+    else
+      head :not_found
+    end
+
+    if @current_rookie
+      if @current_rookie.update_attributes(:rookie_experience => params[:user][:rookie_experience])
+        head :no_content
+      else
+        head :unprocessable_entity
+      end
+    else
+      head :not_found
+    end
+
   end
 
   def destroy
@@ -50,6 +74,10 @@ class UsersController < ApplicationController
     end
   end
 
+  private
 
+  def user_params
+    params.require(:user).permit(:id, :first_name, :last_name, :email, :avatar)
+  end
 
 end
