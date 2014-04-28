@@ -60,3 +60,4 @@ $( "#addpin" ).on( "click", function() {
   });
 
 });
+
