@@ -26,6 +26,10 @@ WELCOME = "Welcome to Show me the Ropes"
         @guide.save
         @rookie = Rookie.new(user_id: @user.id, rookie_experience: "")
         @rookie.save
+        @guide_review = GuideReview.new(rookie_id: @rookie.id, guide_id: @guide.id, textReview: "", rating: 0)
+        @guide_review.save
+        @rookie_review = RookieReview.new(rookie_id: @rookie.id, guide_id: @guide.id, textReview: "", rating: 0)
+        @rookie_review.save
         return if log_user_in( @user, WELCOME )
       else
         redirect_to root_url
