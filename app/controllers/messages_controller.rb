@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
 
   def create
     MessageMailer.message_guide(message_params).deliver
+    redirect_to root_url
   end
 
   private
