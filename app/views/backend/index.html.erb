@@ -3,6 +3,9 @@
   <a class="active item brand">
     <i class="white url icon"></i> Show me the Ropes
   </a>
+  <div id="right_menu" class="item right menu">
+    <%= "Welcome, #{@current_user.email}" %>
+  </div>
   <div class="ui compact inverted menu">
     <div class="ui simple dropdown item"> Options
       <i class="dropdown icon"></i>
@@ -16,14 +19,11 @@
       </div>
     </div>
   </div>
-  <div id="right_menu" class="item right menu">
-    <%= "Welcome, #{@current_user.email}" %>
-  </div>
 </div>
 
 
 <!-- SIDEBAR -->
-<div class="ui styled sidebar">
+<div class="ui styled floating sidebar">
   <h4 class="ui header">What activities do you like?</h4>
 
   <div class="ui icon input">
@@ -53,6 +53,11 @@
   $('.toggle.button')
     .removeClass('disabled')
   ;
+  $('.sidebar')
+  .sidebar({
+    overlay: true
+  })
+;
 </script>
 
 <!--Defining the structure of the pin popup window on load
