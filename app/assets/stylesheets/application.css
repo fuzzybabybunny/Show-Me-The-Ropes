@@ -35,6 +35,9 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.ui.compact.inverted.menu {
+  float: right;
+}
 
 .brand{
   font-family: 'Swanky and Moo Moo', cursive;
@@ -49,8 +52,8 @@ body {
   margin: 6px 0 -6px 0;
 }
 
-.logout a {
-  text-decoration: none;
+.logout {
+  text-decoration: none !important;
 }
 
 /*.ui.input input {
@@ -83,6 +86,7 @@ body {
   cursor: pointer;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */ !important;
 }
+
 
 /*----- BODY -----*/
 

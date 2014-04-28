@@ -43,20 +43,23 @@ $( "#addpin" ).on( "click", function() {
     var newPinInfoWindow = new google.maps.InfoWindow({
       content: contentString
     });
-
+    // console.log("adding pin event");
     google.maps.event.addListener(marker, 'click', function(event) {
-      newPinInfoWindow.open(map,marker);s
+      newPinInfoWindow.open(map,marker);
       // x = newWindow()
       // console.log(this)
     });
 
   };
 
-  google.maps.event.addListener(map, 'click', function(event) {
+  var dropPinListenerHandle = google.maps.event.addListener(map, 'click', function(event) {
     // setTimeout(function(){
     // $ ( "#newPinForm" ).removeClass("hide");
     // },2000);
+    // console.log("adding/inside of map click");
     placeMarker(event.latLng);
+    google.maps.event.removeListener(dropPinListenerHandle);
   });
 
 });
+
