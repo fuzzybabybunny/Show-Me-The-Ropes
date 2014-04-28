@@ -1,0 +1,68 @@
+<div id="allUserPinsWindow" class="ui raised segment signin">
+  <div class="cmborder">
+    <table class="ui table segment">
+      <caption>{{user/first_name}}'s Pins</caption>
+        <thead>
+          <tr><th>Title</th>
+          <th>Activity</th>
+          <th>Description</th>
+          <th colspan="2">Actions</th>
+        </tr></thead>
+        <tbody>
+          {{#each user/guide_pins}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{activity}}</td>
+            <td>{{description}}</td>
+            <td>
+              <i class="circular large edit link icon" href="javascript:void(0)" onClick="editPinFormPopup({{id}})"></i>
+            </td>
+            <td>
+              <i class="circular large trash link icon" href="javascript:void(0)" onClick="deletePin({{id}})"></i>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+    </table>
+  </div>
+  <div class='close_message' id="messageclose">&times;</div>
+</div>
+
+<script>
+  $( "#messageclose" ).on("click", function() {
+      $('#allUserPinsWindow').fadeOut();
+    });
+
+  $(".rest").restfulizer();
+</script>
+
+<script>
+
+function deletePin(id) {
+  $.ajax({
+       type: "DELETE",
+       url: "api/pins/" + id
+   }).success(function(){
+      alert("Pin Deleted!");
+      getAllCurrentUserPins(); //response from server.
+   });
+};
+
+function editPinFormPopup(id) {
+
+$.ajax({
+      url: "/api/pins/" + id,
+      type: "GET",
+      data: "JSON"
+    }).success(function(data){
+      // console.log(data);
+      var editPinFormHTML = HandlebarsTemplates['pins/edit'](data);
+      // console.log(editPinFormHTML);
+
+      $('.popin').html(editPinFormHTML).fadeIn();
+
+    });
+
+};
+
+</script>

@@ -8,12 +8,13 @@
       <i class="dropdown icon"></i>
       <div class="menu" id="dropdown_menu">
         <div class="item toggle button dropdwn">Activities</div>
+        <div class="item button dropdwn" id="mypins">My Pins</div>
         <div class="item button dropdwn" id="addpin">Add pin</div>
+        <div class="item button dropdown">
+          <%= link_to( "Log Out", logout_url, class: "logout", method: :delete) %>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="right_menu" class="item right menu">
-    <%= link_to( "Log Out", logout_url, method: :delete) %>
   </div>
   <div id="right_menu" class="item right menu">
     <%= "Welcome, #{@current_user.email}" %>

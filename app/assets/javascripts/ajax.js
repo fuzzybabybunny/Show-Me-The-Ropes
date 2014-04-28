@@ -1,3 +1,24 @@
+// RETRIEVE ALL CURRENT USER'S PINS FROM DB
+// GENERATES VIEW OF ALL USER'S PINS
+function getAllCurrentUserPins() {
+
+  $.ajax({
+    url: "/api/current_user",
+    type: "GET",
+    data: "JSON"
+  }).success(function(data){
+    // console.log(data);
+    var guidePinsHTML = HandlebarsTemplates['pins/index'](data);
+    // console.log(guidePinsHTML);
+
+    $('.popin').html(guidePinsHTML).fadeIn();
+
+  });
+
+};
+
+
+
 $(document).ready(function() {
 
   // $( "#pinGuideName" ).on("click", function() {
@@ -14,7 +35,6 @@ $(document).ready(function() {
   //     });
   //   });
 
-
   $("#home").on("click", "#messageclose", function(event){
     $('#messagePinGuideProfile').fadeOut();
   });
@@ -23,6 +43,9 @@ $(document).ready(function() {
     $('#messagePinGuideForm').fadeOut();
   });
 
+  $("#home").on("click", "#mypins", function(event){
+    getAllCurrentUserPins();
+  });
 
   $( "#register" ).on("click", function() {
     $.ajax('/register.html', {

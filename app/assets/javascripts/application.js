@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require angular
 //= require angular_search
+//= require jquery.restfulizer
+//= require jquery.serialize-object
 //= require handlebars.runtime
 //= require_tree ./templates
 //= require_tree .

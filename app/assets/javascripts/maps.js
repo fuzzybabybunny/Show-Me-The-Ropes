@@ -18,7 +18,7 @@ function initialize() {
 
 
 // LISTENING FOR PIN CLICKS
-function iconClick(marker, infowindow){
+function pinClick(marker, infowindow){
     google.maps.event.addListener(marker, 'click', function() {
       if(!marker.open){
           infowindow.open(map,marker);
@@ -42,7 +42,7 @@ function iconClick(marker, infowindow){
 
 
 // DROP DATABASE PINS ON MAP
-function dbMarker(pinLat, pinLong, pinID, pinActivity){
+function dropMarker(pinLat, pinLong, pinID, pinActivity){
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(pinLat, pinLong),
     map: map,
@@ -58,7 +58,7 @@ function dbMarker(pinLat, pinLong, pinID, pinActivity){
   //   infowindow.close();
   //   };
   // google.maps.event.addListener(map, 'click', closeInfoWindow);
-  iconClick(marker, infowindow)
+  pinClick(marker, infowindow)
 }
 
 
@@ -75,7 +75,7 @@ function getAllPins() {
       var pinLat = data["pins"][i]["pin"]["lat"];
       var pinActivity = data["pins"][i]["pin"]["activity"];
 
-      dbMarker(pinLat, pinLong, pinID, pinActivity)
+      dropMarker(pinLat, pinLong, pinID, pinActivity)
     }
   })
 }
@@ -103,8 +103,6 @@ function getPinData(id, template) {
     var pinGuideEmail = data["pin"]["guide_email"];
     var pinGuideExperience = data["pin"]["guide_experience"];
     var pinGuideAvatar = data["pin"]["guide_avatar"]["avatar"]["url"];
-
-    console.log(pinGuideAvatar);
 
     $('#firstHeading').html(pinTitle);
     $('#bodyActivity').html(pinActivity);
@@ -142,8 +140,6 @@ function getPinData(id, template) {
         userFirstName : currentUserFirstName,
         userLastName : currentUserLastName
       };
-
-      var messageSource = $('#messagePinGuideForm').html();
 
       var messageHTML = HandlebarsTemplates['messages/index'](messageData);
 

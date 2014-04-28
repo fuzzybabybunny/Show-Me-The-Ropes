@@ -1,0 +1,53 @@
+<div id="editUserPin" class="ui raised segment signin">
+  <div class="cmborder">
+    <div class="form_heading">Edit Your Pin</div>
+    <form id="editUserPinForm">
+      <div class="ui form attached fluid segment">
+        <div class="two fields">
+          <div class="field">
+            <label>Title</label>
+            <input type="text" name="pin[title]" class="ui input" value="{{pin/title}}">
+          </div>
+          <div class="field">
+            <label>Activity</label>
+            <input type="text" name="pin[activity]" class="ui input" value="{{pin/activity}}">
+          </div>
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea name="pin[description]" class="ui input">{{pin/description}}</textarea>
+        </div>
+
+        <div class="inline field">
+          <input type="submit" value="Submit Changes" class="ui blue submit button">
+        </div>
+      </div>
+    </form>
+  <span class='close_message' id="messageclose">&times;</span>
+  </div>
+</div>
+
+<script>
+
+  $( "#messageclose" ).on("click", function() {
+    $('#editUserPin').fadeOut();
+    getAllCurrentUserPins();
+  });
+
+  $("#editUserPinForm").submit(function(event) {
+    event.preventDefault();
+
+    $.ajax({
+         type: "PATCH",
+         url: "api/pins/{{pin/id}}",
+         contentType: 'application/json',
+         dataType: 'json',
+         data: $('#editUserPinForm').serializeJSON()
+     }).success(function(){
+        alert("Pin edited!");
+        getAllCurrentUserPins(); //response from server.
+     });
+
+  });
+
+</script>

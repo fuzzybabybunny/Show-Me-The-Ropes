@@ -23,3 +23,7 @@ end
 node :guide_email do |guide|
   guide.user.email
 end
+
+node :guide_pins do |guide|
+  guide.pins
+end
