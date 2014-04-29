@@ -95,8 +95,16 @@ body {
 /*----- PIN POPUP CONTENT -----*/
 
 #pinContent {
-  width:  500px;
-  height: 300px;
+  width:  650px;
+  height: 400px;
+}
+
+.firstHeading {
+  text-align: center;
+}
+
+#pinGallery {
+  float: right;
 }
 
 #newPinForm {
@@ -106,8 +114,8 @@ body {
 
 
 #messagePinGuideButton {
-  margin: 0 0 0 310px;
-  position: absolute;
+  margin: 20px 0 0 0;
+  position: relative;
 }
 
 #messagePinGuideForm {
