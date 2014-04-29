@@ -58,7 +58,7 @@
          data: $('#currentUserProfileEditForm').serializeJSON()
      }).success(function(){
         getCurrentUserData();
-        console.log(currentUserProfileHTML);
+        alert("Your profile has been updated.");
         $('.popin').html(window.currentUserProfileHTML).fadeIn();
      });
 
