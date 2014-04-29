@@ -1,6 +1,7 @@
 <div id="messagePinGuideForm" class="ui raised segment signin">
+  <span class='close_message' id="messageclose">&times;</span>
   <div class="cmborder">
-    <div class="form_heading">Send a message to {{guideFirstName}} {{guideLastName}} about {{pinActivity}}!</div>
+    <div class="form_heading">Send a message to {{guideFirstName}} {{guideLastName}} about "{{pinActivity}}"!</div>
     <form action="/message" method="post">
       <div class="ui form attached fluid segment">
         <div class="two fields">
@@ -44,7 +45,6 @@
         </div>
       </div>
     </form>
-  <span class='close_message' id="messageclose">&times;</span>
   </div>
 </div>
 
