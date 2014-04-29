@@ -30,10 +30,8 @@ $( "#addpin" ).on( "click", function() {
     google.maps.event.addListener(marker, 'dragend', function (event) {
       latitude = marker.getPosition().lat();
       longitude = marker.getPosition().lng();
-      console.log("lat dragged: " + latitude);
-      console.log("long dragged: " + longitude);
-
-
+      $("#newPinForm input#pin_long").val(longitude);
+      $("#newPinForm input#pin_lat").val(latitude);
     });
 
 
