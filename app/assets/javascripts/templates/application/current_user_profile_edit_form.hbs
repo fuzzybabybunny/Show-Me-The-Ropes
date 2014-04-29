@@ -1,8 +1,8 @@
 <div id="currentUserProfile" class="ui raised segment signin">
   <form id="currentUserProfileEditForm">
     <h3 class="ui inverted green block header">
-    <input type="text" name="user[first_name]" class="ui input" value="{{currentUserFirstName}}">
-    <input type="text" name="user[last_name]" class="ui input" value="{{currentUserLastName}}">
+    <input type="text" name="user[first_name]" class="ui input centered" value="{{currentUserFirstName}}">
+    <input type="text" name="user[last_name]" class="ui input centered" value="{{currentUserLastName}}">
     </h3>
     <div class="ui two column grid basic segment">
       <div class="column">
@@ -33,11 +33,11 @@
 
     <div class="ui divider"></div>
     <div class="footer">
-    <p>Your Rating: {{currentUserRating}}</p>
-    <span id='messageclose' class='close_profile'>&times;</span>
+    <!-- <p>Your Rating: {{currentUserRating}}</p> -->
+    <span id='messageclose' class='close_profile prof_close'>&times;</span>
     </div>
-    <div class="inline field">
-      <input type="submit" value="Submit Changes" class="ui blue submit button">
+    <div class="inline field editting">
+      <input type="submit" value="Submit Changes" class="ui blue submit button" id="edit_submit_button">
     </div>
   </form>
 </div>

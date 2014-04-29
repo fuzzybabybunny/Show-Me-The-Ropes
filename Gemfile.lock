@@ -271,6 +271,7 @@ DEPENDENCIES
   rabl
   rails (= 4.0.3)
   rb-fchange
+  rb-fsevent
   rb-inotify
   rspec-rails
   sass-rails (~> 4.0.0)

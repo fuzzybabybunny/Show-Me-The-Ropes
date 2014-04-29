@@ -56,15 +56,6 @@ body {
   text-decoration: none !important;
 }
 
-/*.ui.input input {
-  margin-top: 3px !important;
-  font-size: 14px !important;
-  height: 31px;
-  padding: 5px !important;
-}*/
-
-/*----- NAV BAR -----*/
-
 .ui.input.password, .ui.input.email {
   padding-left: 10px;
   -webkit-border-radius: 5px;
@@ -218,10 +209,66 @@ body, .ui.vertical.divider {
   bottom: 16px;
 }
 
-.ui.blue.button{
-/*  position:absolute;
-  right:  35px;
-  bottom: 15px;*/
+h4.ui.header{
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  text-align: left;
+  line-height: 0.1 !important;
+  margin-top: 30px;
+}
+
+.prof_desc {
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  margin-bottom: 30px !important;
+  font-size: 0.9em;
+}
+
+.center.aligned.column{
+  margin-bottom: 0px !important;
+}
+
+#editprofile{
+  margin-right: 30px;
+}
+
+div.inline.field.editting {
+  padding-left: 30px;
+}
+
+
+/*----- TABLE -----*/
+h1 {
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+}
+
+.ui.table td {
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  font-size: 0.8em;
+}
+
+.ui.table th {
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+}
+
+.name_pins {
+  font-weight: normal;
+  color: black;
+}
+
+
+/*----- EDIT -----*/
+
+.prof_close{
+  right: 5px !important;
+  bottom: 3px !important;
+}
+
+#edit_submit_button{
+  margin-left: 160px;
+}
+
+.ui.input.centered{
+  text-align: center;
+  margin: 0 20px 0 20px;
 }
 
 
@@ -269,6 +316,15 @@ body, .ui.vertical.divider {
 #register_label {
   font-size: 0.875em;
 }
+
+
+/*----- CONTACT GUDIE -----*/
+.form_heading{
+  font-family:  "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  font-weight: normal;
+  padding: 0 10px 0 15px;
+}
+
 
 /*----- SPINNER -----*/
 
