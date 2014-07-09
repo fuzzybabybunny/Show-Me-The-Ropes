@@ -1,0 +1,36 @@
+<div id="newPinForm" class="">
+  <form action="/api/pins" class="ui form attached fluid segment" method="post">
+    <div class="field">
+      <label>Pin title</label>
+      <input id="pin_title" name="pin[title]" type="text">
+    </div>
+    <div class="field">
+      <label>Activity</label>
+      <input id="pin_activity" name="pin[activity]" type="text">
+    </div>
+    <div class="field">
+      <label>Pin description</label>
+      <textarea id="pin_description" name="pin[description]"></textarea>
+    </div>
+    <div class="field hide">
+      <label>lat</label>
+      <input id="pin_lat" name="pin[lat]" type="hidden" value="{{pinLatitude}}">
+    </div>
+    <div class="field hide">
+      <label>long</label>
+      <input id="pin_long" name="pin[long]" type="hidden" value="{{pinLongitude}}">
+    </div>
+    <div class="field hide">
+      <label>guide_id</label>
+      <input id="pin_guide_id" name="pin[guide_id]" type="hidden" value="4">
+
+    </div>
+
+    <div class="inline field">
+      <div class="ui checkbox">
+        <input type="checkbox" id="terms">
+        <label for="terms">I agree to the terms and conditions</label>
+      </div>
+    </div>
+    <input class="ui blue submit button" id="pin_submit" name="commit" type="submit" value="Submit">
+</form></div>

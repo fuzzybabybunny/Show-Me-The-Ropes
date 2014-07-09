@@ -32,8 +32,18 @@ $( "#addpin" ).on( "click", function() {
       longitude = marker.getPosition().lng();
       $("#newPinForm input#pin_long").val(longitude);
       $("#newPinForm input#pin_lat").val(latitude);
-    });
 
+      $.ajax({
+
+        var pinData = {
+          pinLatitude : marker.getPosition().lat(),
+          pinLongitude : marker.getPosition().lng()
+        };
+
+        var newPinFormHTML = HandlebarsTemplates['pins/new'](pinData);
+
+      });
+    });
 
     var contentString = document.getElementById('newPinForm');
 
